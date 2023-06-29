@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import * as serviceWorker from "./serviceWorker";
-import "./construction.css";
-import Construction from "./Construction";
+import "./construction_page/construction.css";
+import Construction from "./construction_page/Construction";
 import Portfolio from "./Portfolio";
 
 

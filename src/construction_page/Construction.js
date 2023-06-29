@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
-import particlesOptions from "./particles.json";
+import particlesOptions from "./construction_particles.json";
 
 function App() {
     const particlesInit = useCallback(main => {
