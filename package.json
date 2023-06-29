@@ -11,7 +11,8 @@
     "react-scripts": "5.0.1",
     "tslib": "^2.6.0",
     "tsparticles": "^2.10.1",
-    "tsparticles-engine": "^2.10.1"
+    "tsparticles-engine": "^2.10.1",
+    "tsparticles-preset-sea-anemone": "^2.10.1"
   },
   "scripts": {
     "predeploy": "npm run build",

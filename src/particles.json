@@ -31,6 +31,10 @@
     "collisions": {
       "enable": true
     },
+    "links": {
+      "distance": 200,
+      "enable": false
+    },
     "move": {
       "direction": "none",
       "enable": true,
