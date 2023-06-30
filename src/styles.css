@@ -1,0 +1,60 @@
+body {
+    margin: 0px;
+    background-color: #FFF;
+}
+
+/* Navbar Styles */
+
+.navbar {
+    height: 10vh;
+}
+
+.navbar-leftbar {
+
+}
+
+.navbar-midbar {
+
+}
+
+.navbar-rightbar {
+
+}
+
+.navbar-contact {
+
+}
+
+/* Body Styles */
+
+.Body {
+    position: relative;
+    min-height: 90vh;
+}
+
+#Body-particles {
+    position: absolute;
+    height: 70%;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.Body-header {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    font-size: calc(8px + 2.5vmin);
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding: 0% 10%;
+}
+
+.name {
+    font-size: calc(10px + 8vmin);
+}
+

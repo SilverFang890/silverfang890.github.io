@@ -1,4 +1,13 @@
-import Particles from "react-particles";
-import { Engine } from "tsparticles-engine";
-import { loadSeaAnemonePreset } from "tsparticles-preset-sea-anemone";
+import Navbar from "./Navbar"
+import Body from "./Body"
 
+function Portfolio() {
+    return (
+        <>
+        <Navbar />
+        <Body />
+        </>
+    )
+}
+
+export default Portfolio;
