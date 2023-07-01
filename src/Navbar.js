@@ -12,7 +12,13 @@ function Homebar() {
     function Contact() {
         return (
             <div className="navbar-contact">
-                
+                <div className="contact-info">
+                    samuel9eun@gmail.com
+                    <br/>
+                    Los Angeles • CA 
+                    <br/>
+                    San Diego • CA
+                </div>
             </div>
         )
     }

@@ -6,23 +6,36 @@ body {
 /* Navbar Styles */
 
 .navbar {
+    display: flex;
     height: 10vh;
+    background-color: #000;
 }
 
 .navbar-leftbar {
-
+    height: inherit;
+    width: 30%;
+    float: left;
 }
 
 .navbar-midbar {
-
+    height: inherit;
+    width: 40%;
 }
 
 .navbar-rightbar {
-
+    height: inherit;
+    width: 30%;
+    float: right;
 }
 
 .navbar-contact {
-
+    display: flex;
+    align-items: center;
+    height: inherit;
+    color: #FFF;
+    margin-left: clamp(7.5%, 15px, 1.5vw);
+    margin-right: clamp(7.5%, 15px, 1.5vw);
+    font-size: clamp(13px, 1.2vw, 1em);
 }
 
 /* Body Styles */
