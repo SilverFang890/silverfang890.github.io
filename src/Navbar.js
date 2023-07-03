@@ -1,23 +1,62 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
+    const [screenSize, setScreenSize] = useState(getCurrentDimension());
     const [section, setSection] = useState("home");
 
+    function getCurrentDimension() {
+        return {
+            width: window.innerWidth
+        }
+    }
+
+    useEffect(() => {
+        const updateDimension = () => {
+            setScreenSize(getCurrentDimension());
+        }
+        window.addEventListener('resize', updateDimension);
+
+        return(() => {
+            window.removeEventListener('resize', updateDimension);
+        })
+    }, [screenSize])
+
+
     if (section == "home") {
+        if (screenSize.width <= 600) {
+            return <Homebar mobile={true} />
+        }
+        
         return <Homebar />
     }
 }
 
-function Homebar() {
+function Homebar({ mobile=false }) {
+    if (mobile) {
+        return (
+            <div className="navbar">
+            <Leftbar elem={<Contact pos="left"/> } />
+            <Midbar elem={<FontAwesomeIcon id="dropdown" icon={faBars} />} />
+            <Rightbar elem={
+                <>
+                <Socials pos="left" />
+                <Sections pos="right" />
+                </>
+            } />
+        </div>
+        )
+    }
+    
     return (
         <div className="navbar">
             <Leftbar elem={<Contact pos="left"/> } />
-            <Midbar elem={<Socials pos="mid"/>} />
-            <Rightbar elem={<Sections pos="right"/>} />
+            <Midbar elem={<Socials pos="mid" />} />
+            <Rightbar elem={<Sections pos="right" />} />
         </div>
     )
 }
