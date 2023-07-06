@@ -45,14 +45,16 @@
         font-size: clamp(11px, 3vw, 1em);
     }
 
-    .icons {
-        margin: 3px;
-
+    .icon-border {
         padding: clamp(4px, 1.5vw, 7px);
         border-style: solid;
         border-radius: 50px;
         border-width: clamp(1px, 0.2vw, 1.6px);
+    }
 
+    .icons {
+        width: clamp(1em, 5vw, 1.5em);
+        height: clamp(1em, 5vw, 1.5em);
         font-size: clamp(1em, 5vw, 2em);
     }
 

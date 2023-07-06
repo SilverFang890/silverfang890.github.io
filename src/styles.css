@@ -6,6 +6,9 @@ body {
 /* Navbar Styles */
 
 .navbar {
+    position: sticky;
+    top: 0;
+
     background-color: #000;
     color: #FFF;
 
@@ -81,21 +84,28 @@ body {
     justify-content: center;
 }
 
-.icons {
+.icon-border {
     margin: 4px;
 
     padding: 1.5vw;
     border-style: solid;
-    border-radius: 50px;
-    border-width: 1.2px;
+    border-radius: 50%;
+    border-width: 1.4px;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons {
+    width: max(6.4vw, 4vh);
+    height: max(6.4vw, 4vh);
     font-size: max(6.4vw, 4vh);
-    /* max(16vw, 10vh); */
 }
 
 #navbar-sections {
     display: flex;
-    background-color: #bbb;
+    background-color: #bbbbbb80;
 
     flex-direction: column;
     justify-content: center;
@@ -107,14 +117,14 @@ body {
 .section {
     padding: 5px;
 
-    font-size: clamp(16px, 4vw, 1.3em);
+    font-size: max(4.8vw, 3vh);
 }
 
 /* Body Styles */
 
 .Body {
     position: relative;
-    min-height: 90vh;
+    min-height: 80vh;
 }
 
 #Body-particles {

@@ -13,7 +13,7 @@ const Path = props => (
 export default function MenuToggle({ isOpen, setIsOpen }) {
     return (
         <motion.div onClick={() => setIsOpen(!isOpen)} id="dropdown">
-            <svg width="max(8vw, 5vh)" viewBox="0 0 21 18">
+            <svg width="max(6.4vw, 4vh)" viewBox="0 0 21 18">
                 <Path
                     variants={{
                         closed: { d: "M 2 1.75 L 19 1.75" },
@@ -31,7 +31,7 @@ export default function MenuToggle({ isOpen, setIsOpen }) {
                             d: "M 4 9 L 19 9"
                         }
                     }}
-                    transition={{ duration: 0.15 }}
+                    transition={{ duration: 0.11 }}
                 />
                 <Path
                     variants={{

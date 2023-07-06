@@ -60,22 +60,6 @@ function Homebar({ mobile, isOpen, setIsOpen }) {
                     <>
                     <Socials pos="left" />
                     <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
-                    {/* <motion.div
-                        onClick={() => setIsOpen(!isOpen)} 
-                    >
-                        <motion.div 
-                            variants={{
-                                open: { rotate: 180 },
-                                closed: { rotate: 0 }
-                            }}
-                            transition={{ duration: 0.25 }}
-                            style={{ originY: 0.475 }}
-                        >
-                            <MenuToggle />
-
-                            <FontAwesomeIcon id="dropdown" icon={faBars} />
-                        </motion.div>
-                    </motion.div> */}
                     </>
                 } />
                 <Rightbar elem={
@@ -131,9 +115,15 @@ function Contact({ pos }) {
 function Socials({ pos }) {
     return (
         <motion.div id="navbar-icons" className={pos}>
-            <FontAwesomeIcon className="icons" icon={faGithub} />
-            <FontAwesomeIcon className="icons" icon={faLinkedin} />
-            <FontAwesomeIcon className="icons" icon={faEnvelope} />
+            <div className="icon-border">
+                <FontAwesomeIcon className="icons" icon={faGithub} />
+            </div>
+            <div className="icon-border">
+                <FontAwesomeIcon className="icons" icon={faLinkedin} />
+            </div>
+            <div className="icon-border">
+                <FontAwesomeIcon className="icons" icon={faEnvelope} />
+            </div>
         </motion.div>
     )
 }
