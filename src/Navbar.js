@@ -5,6 +5,7 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import { MenuToggle } from "./MenuToggle";
 
 const itemVariants = {
     open: {
@@ -69,6 +70,7 @@ function Homebar({ mobile, isOpen, setIsOpen }) {
                             transition={{ duration: 0.25 }}
                             style={{ originY: 0.475 }}
                         >
+                            {/* <MenuToggle /> */}
                             <FontAwesomeIcon id="dropdown" icon={faBars} />
                         </motion.div>
                     </motion.div>
