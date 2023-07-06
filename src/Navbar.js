@@ -4,10 +4,21 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
+
+const itemVariants = {
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 300, damping: 24 }
+    },
+    closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
+  };
 
 export default function Navbar() {
     const [screenSize, setScreenSize] = useState(getCurrentDimension());
     const [section, setSection] = useState("home");
+    const [isOpen, setIsOpen] = useState(false);
 
     function getCurrentDimension() {
         return {
@@ -28,27 +39,45 @@ export default function Navbar() {
 
 
     if (section == "home") {
-        if (screenSize.width <= 600) {
-            return <Homebar mobile={true} />
-        }
-        
-        return <Homebar />
+        return <Homebar 
+                    mobile={screenSize.width <= 600} 
+                    isOpen={isOpen} 
+                    setIsOpen={setIsOpen} 
+                />
     }
 }
 
-function Homebar({ mobile=false }) {
+function Homebar({ mobile, isOpen, setIsOpen }) {
     if (mobile) {
         return (
-            <div className="navbar">
-            <Leftbar elem={<Contact pos="left"/> } />
-            <Midbar elem={<FontAwesomeIcon id="dropdown" icon={faBars} />} />
-            <Rightbar elem={
-                <>
-                <Socials pos="left" />
-                <Sections pos="right" />
-                </>
-            } />
-        </div>
+            <motion.div className="navbar" 
+                initial={false}
+                animate={isOpen ? "open" : "closed"}
+            >
+                <Leftbar elem={<Contact pos="left"/> } />
+                <Midbar elem={
+                    <>
+                    <Socials pos="left" />
+                    <motion.div
+                        onClick={() => setIsOpen(!isOpen)} 
+                    >
+                        <motion.div 
+                            variants={{
+                                open: { rotate: 180 },
+                                closed: { rotate: 0 }
+                            }}
+                            transition={{ duration: 0.25 }}
+                            style={{ originY: 0.475 }}
+                        >
+                            <FontAwesomeIcon id="dropdown" icon={faBars} />
+                        </motion.div>
+                    </motion.div>
+                    </>
+                } />
+                <Rightbar elem={
+                    <Sections pos="right" mobile={mobile} isOpen={isOpen} />
+                } />
+            </motion.div>
         )
     }
     
@@ -63,15 +92,15 @@ function Homebar({ mobile=false }) {
 
 function Leftbar({ elem }) {
     return (
-        <div className="navbar-leftbar">
+        <div id="navbar-leftbar">
             {elem }
         </div>
     )
 }
 
-function Midbar({ elem }) {
+function Midbar({ elem,  }) {
     return (
-        <div className="navbar-midbar">
+        <div id="navbar-midbar">
             {elem}
         </div>
     )
@@ -79,15 +108,15 @@ function Midbar({ elem }) {
 
 function Rightbar({ elem }) {
     return (
-        <div className="navbar-rightbar">
+        <motion.div id="navbar-rightbar">
             {elem}
-        </div>
+        </motion.div>
     )
 }
 
 function Contact({ pos }) {
     return (
-        <div className="navbar-contact" id={pos}>
+        <div id="navbar-contact" className={pos}>
             <div className="contact">samuel9eun@gmail.com</div>
             <div className="contact">Los Angeles • CA</div>
             <div className="contact">San Diego • CA</div>
@@ -97,17 +126,55 @@ function Contact({ pos }) {
 
 function Socials({ pos }) {
     return (
-        <div className="navbar-icons" id={pos}>
+        <motion.div id="navbar-icons" className={pos}>
             <FontAwesomeIcon className="icons" icon={faGithub} />
             <FontAwesomeIcon className="icons" icon={faLinkedin} />
             <FontAwesomeIcon className="icons" icon={faEnvelope} />
-        </div>
+        </motion.div>
     )
 }
 
-function Sections({ pos }) {
+function Sections({ pos, mobile, isOpen }) {
+    if (mobile) {
+        return (
+            <motion.div id="navbar-sections"
+                variants={{
+                open: {
+                clipPath: "inset(0% 0% 0% 0% round 0px 0px 10px 10px)",
+                transition: {
+                    type: "spring",
+                    bounce: 0,
+                    duration: 0.6,
+                    delayChildren: 0.2,
+                    staggerChildren: 0.05
+                }
+                },
+                closed: {
+                clipPath: "inset(0% 0% 100% 0% round 0px 0px 10px 10px)",
+                transition: {
+                    type: "spring",
+                    bounce: 0,
+                    duration: 0.3
+                }
+                }
+            }}
+            style={{ pointerEvents: isOpen ? "auto" : "none" }}
+            >
+                <motion.div className="section" variants={itemVariants}>
+                    Home
+                </motion.div>
+                <motion.div className="section" variants={itemVariants}>
+                    About Me
+                </motion.div>
+                <motion.div className="section" variants={itemVariants}>
+                    Projects
+                </motion.div>
+            </motion.div>
+        )
+    }
+
     return (
-        <div className="navbar-sections" id={pos}>
+        <div id="navbar-sections" className={pos}>
             <div className="section">Home</div>
             <div className="section">About Me</div>
             <div className="section">Projects</div>
