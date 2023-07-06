@@ -5,7 +5,7 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
-import { MenuToggle } from "./MenuToggle";
+import MenuToggle from "./MenuToggle";
 
 const itemVariants = {
     open: {
@@ -59,7 +59,8 @@ function Homebar({ mobile, isOpen, setIsOpen }) {
                 <Midbar elem={
                     <>
                     <Socials pos="left" />
-                    <motion.div
+                    <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
+                    {/* <motion.div
                         onClick={() => setIsOpen(!isOpen)} 
                     >
                         <motion.div 
@@ -70,10 +71,11 @@ function Homebar({ mobile, isOpen, setIsOpen }) {
                             transition={{ duration: 0.25 }}
                             style={{ originY: 0.475 }}
                         >
-                            {/* <MenuToggle /> */}
+                            <MenuToggle />
+
                             <FontAwesomeIcon id="dropdown" icon={faBars} />
                         </motion.div>
-                    </motion.div>
+                    </motion.div> */}
                     </>
                 } />
                 <Rightbar elem={
@@ -141,26 +143,26 @@ function Sections({ pos, mobile, isOpen }) {
         return (
             <motion.div id="navbar-sections"
                 variants={{
-                open: {
-                clipPath: "inset(0% 0% 0% 0% round 0px 0px 10px 10px)",
-                transition: {
-                    type: "spring",
-                    bounce: 0,
-                    duration: 0.6,
-                    delayChildren: 0.2,
-                    staggerChildren: 0.05
-                }
-                },
-                closed: {
-                clipPath: "inset(0% 0% 100% 0% round 0px 0px 10px 10px)",
-                transition: {
-                    type: "spring",
-                    bounce: 0,
-                    duration: 0.3
-                }
-                }
-            }}
-            style={{ pointerEvents: isOpen ? "auto" : "none" }}
+                    open: {
+                    clipPath: "inset(0% 0% 0% 0% round 0px 0px 10px 10px)",
+                    transition: {
+                        type: "spring",
+                        bounce: 0,
+                        duration: 0.6,
+                        delayChildren: 0.2,
+                        staggerChildren: 0.05
+                    }
+                    },
+                    closed: {
+                    clipPath: "inset(0% 0% 100% 0% round 0px 0px 10px 10px)",
+                    transition: {
+                        type: "spring",
+                        bounce: 0,
+                        duration: 0.3
+                    }
+                    }
+                }}
+                style={{ pointerEvents: isOpen ? "auto" : "none" }}
             >
                 <motion.div className="section" variants={itemVariants}>
                     Home
