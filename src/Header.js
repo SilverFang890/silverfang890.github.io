@@ -3,16 +3,17 @@ import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import fullSizePart from "./body_particles.json";
 import smallSizePart from "./small_body_particles.json";
+import { Element } from "react-scroll";
 
-export default function Body() {
+export default function Header() {
     return (
-        <div className="Body">
+        <Element id="header" name="header">
             <ResponsiveParticle />
-            <header className="Body-header">
+            <header className="header-title">
                 <div className="name">Samuel Eun</div>
                 <div className="desc">Aspiring Full Stack Software Engineer and Second Year at UC San Diego</div>
             </header>
-        </div>
+        </Element>
     )
 }
 
@@ -41,8 +42,8 @@ function ResponsiveParticle() {
     }, [screenSize])
 
     if (screenSize.width <= 850) {
-        return <Particles id="Body-particles" init={particlesInit} options={smallSizePart}/>
+        return <Particles id="header-particles" init={particlesInit} options={smallSizePart}/>
     } else {
-        return <Particles id="Body-particles" init={particlesInit} options={fullSizePart}/>
+        return <Particles id="header-particles" init={particlesInit} options={fullSizePart}/>
     }
 }

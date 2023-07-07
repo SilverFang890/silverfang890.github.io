@@ -3,7 +3,7 @@ body {
     background-color: #FFF;
 }
 
-/* Navbar Styles */
+/* Navbar */
 
 .navbar {
     position: sticky;
@@ -120,14 +120,22 @@ body {
     font-size: max(4.8vw, 3vh);
 }
 
-/* Body Styles */
-
-.Body {
-    position: relative;
-    min-height: 80vh;
+.active {
+    font-weight: bold;
+    color: #fb9850;
 }
 
-#Body-particles {
+/* Header */
+
+#header {
+    position: relative;
+    bottom: max(16vw, 10vh);
+    height: 100vh;
+
+    z-index: -1;
+}
+
+#header-particles {
     position: absolute;
     height: 70%;
     width: 80%;
@@ -135,10 +143,10 @@ body {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    z-index: -1;
+    z-index: -2;
 }
 
-.Body-header {
+.header-title {
     position: absolute;
     width: 80%;
     text-align: center;
@@ -153,3 +161,8 @@ body {
     font-size: calc(10px + 8vmin);
 }
 
+/* About Me */
+
+#about-me {
+    height: 100vh;
+}

@@ -1,11 +1,13 @@
 import Navbar from "./Navbar"
-import Body from "./Body"
+import Header from "./Header"
+import About_me from "./About_me";
 
 function Portfolio() {
     return (
         <>
         <Navbar />
-        <Body />
+        <Header />
+        <About_me />
         </>
     )
 }

@@ -7,7 +7,7 @@
 
 /* Tablet */
 @media only screen and (min-width: 600px) {
-    /* Navbar Styles */
+    /* Navbar */
     
     .navbar {
         display: flex;
@@ -70,6 +70,13 @@
 
         font-size: clamp(12px, 3.4vw, 1.2em);
     }
+
+    /* Header */
+    #header {
+        bottom: 0px;
+        height: 80vh;
+    }
+
 }
 
 @media only screen and (min-width: 768px) {

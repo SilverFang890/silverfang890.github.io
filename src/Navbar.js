@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import Scroll from "react-scroll";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
+
 import MenuToggle from "./MenuToggle";
+
+const ScrollLink = Scroll.Link;
 
 const itemVariants = {
     open: {
@@ -51,7 +55,7 @@ export default function Navbar() {
 function Homebar({ mobile, isOpen, setIsOpen }) {
     if (mobile) {
         return (
-            <motion.div className="navbar" 
+            <motion.nav className="navbar" 
                 initial={false}
                 animate={isOpen ? "open" : "closed"}
             >
@@ -65,16 +69,16 @@ function Homebar({ mobile, isOpen, setIsOpen }) {
                 <Rightbar elem={
                     <Sections pos="right" mobile={mobile} isOpen={isOpen} />
                 } />
-            </motion.div>
+            </motion.nav>
         )
     }
     
     return (
-        <div className="navbar">
+        <nav className="navbar">
             <Leftbar elem={<Contact pos="left"/> } />
             <Midbar elem={<Socials pos="mid" />} />
             <Rightbar elem={<Sections pos="right" />} />
-        </div>
+        </nav>
     )
 }
 
@@ -155,7 +159,9 @@ function Sections({ pos, mobile, isOpen }) {
                 style={{ pointerEvents: isOpen ? "auto" : "none" }}
             >
                 <motion.div className="section" variants={itemVariants}>
-                    Home
+                    <ScrollLink activeClass="active" smooth spy to="header">
+                        Home
+                    </ScrollLink>
                 </motion.div>
                 <motion.div className="section" variants={itemVariants}>
                     About Me
