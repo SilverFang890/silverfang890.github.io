@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/silverfang890.github.io/college-portfolio/static/css/main.a3b3c7ea.css",
-    "main.js": "/silverfang890.github.io/college-portfolio/static/js/main.8fd22b3e.js",
-    "index.html": "/silverfang890.github.io/college-portfolio/index.html",
-    "main.a3b3c7ea.css.map": "/silverfang890.github.io/college-portfolio/static/css/main.a3b3c7ea.css.map",
-    "main.8fd22b3e.js.map": "/silverfang890.github.io/college-portfolio/static/js/main.8fd22b3e.js.map"
+    "main.css": "/silverfang890.github.io/static/css/main.a3b3c7ea.css",
+    "main.js": "/silverfang890.github.io/static/js/main.8fd22b3e.js",
+    "index.html": "/silverfang890.github.io/index.html",
+    "main.a3b3c7ea.css.map": "/silverfang890.github.io/static/css/main.a3b3c7ea.css.map",
+    "main.8fd22b3e.js.map": "/silverfang890.github.io/static/js/main.8fd22b3e.js.map"
   },
   "entrypoints": [
     "static/css/main.a3b3c7ea.css",
