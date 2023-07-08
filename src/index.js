@@ -11,7 +11,7 @@ import Portfolio from "./Portfolio";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-    <Portfolio />
+    <Construction />
 );
 
 // change to register to enable service workers
