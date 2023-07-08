@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/silverfang890.github.io/static/css/main.a3b3c7ea.css",
-    "main.js": "/silverfang890.github.io/static/js/main.8fd22b3e.js",
-    "index.html": "/silverfang890.github.io/index.html",
-    "main.a3b3c7ea.css.map": "/silverfang890.github.io/static/css/main.a3b3c7ea.css.map",
-    "main.8fd22b3e.js.map": "/silverfang890.github.io/static/js/main.8fd22b3e.js.map"
+    "main.css": "/static/css/main.a3b3c7ea.css",
+    "main.js": "/static/js/main.c6e3388a.js",
+    "index.html": "/index.html",
+    "main.a3b3c7ea.css.map": "/static/css/main.a3b3c7ea.css.map",
+    "main.c6e3388a.js.map": "/static/js/main.c6e3388a.js.map"
   },
   "entrypoints": [
     "static/css/main.a3b3c7ea.css",
-    "static/js/main.8fd22b3e.js"
+    "static/js/main.c6e3388a.js"
   ]
 }
