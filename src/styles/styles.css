@@ -3,6 +3,16 @@ body {
     background-color: #FFF;
 }
 
+.section {
+    position: relative;
+    bottom: max(16vw, 10vh);
+}
+
+section {
+    position: relative;
+    top: max(16vw, 10vh);
+}
+
 /* Navbar */
 
 .navbar {
@@ -114,7 +124,7 @@ body {
     width: 100%;
 }
 
-.section {
+.nav-section {
     padding: 5px;
 
     font-size: max(4.8vw, 3vh);
@@ -128,41 +138,59 @@ body {
 /* Header */
 
 #header {
-    position: relative;
-    bottom: max(16vw, 10vh);
     height: 100vh;
 
     z-index: -1;
 }
 
+#header-intro {
+    height: calc(75% - max(16vw, 10vh));
+}
+
 #header-particles {
     position: absolute;
-    height: 70%;
-    width: 80%;
     top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    left: 10%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    height: 80%;
+    width: 80%;
+
     z-index: -2;
 }
 
-.header-title {
+#header-title {
     position: absolute;
-    width: 80%;
-    text-align: center;
-    font-size: calc(8px + 2.5vmin);
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+
+    width: 80%;
+
     padding: 0% 10%;
+    text-align: center;
 }
 
-.name {
+#name {
     font-size: calc(10px + 8vmin);
+}
+
+#desc {
+    font-size: calc(8px + 2.5vmin);
+}
+
+#header-article {
+    height: 25%;
+
+    border-top: solid #CCC 1px;
+    background-color: #EDEDED;
 }
 
 /* About Me */
 
 #about-me {
     height: 100vh;
+
+    z-index: -1;
 }

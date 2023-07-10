@@ -1,5 +1,5 @@
-import Navbar from "./Navbar"
-import Header from "./Header"
+import Navbar from "./Navbar";
+import Header from "./Header";
 import About_me from "./About_me";
 
 function Portfolio() {

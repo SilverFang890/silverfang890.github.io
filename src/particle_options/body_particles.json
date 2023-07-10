@@ -5,10 +5,10 @@
     },
     "particles": {
         "number": {
-            "value": 6,
+            "value": 8,
             "density": {
                 "enable": true,
-                "area": 290
+                "area": 250
             },
             "limit": 13
         },

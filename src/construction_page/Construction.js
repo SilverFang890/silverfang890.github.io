@@ -20,7 +20,7 @@ function App() {
                     <div className='desc'>Portfolio Under Construction (Summer 23)</div>
                     <div className='redirect'
                         >Meanwhile, please visit my high school 
-                        portfolio <a className='link' href='https://samuelsilver.me'>here</a>
+                        portfolio <a className='link' href='https://samuelsilver.me/highschool-portfolio'>here</a>
                     </div>
                     <div className='redirect'
                         >Or, see my progress <a className='link' onClick={() => setDemo(true)}>here</a>

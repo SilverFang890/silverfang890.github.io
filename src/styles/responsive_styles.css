@@ -7,6 +7,16 @@
 
 /* Tablet */
 @media only screen and (min-width: 600px) {
+    .section {
+        position: relative;
+        bottom: 10vh;
+    }
+    
+    section {
+        position: relative;
+        top: 10vh;
+    }
+
     /* Navbar */
     
     .navbar {
@@ -65,7 +75,7 @@
         align-items: flex-end;
     }
 
-    .section {
+    .nav-section {
         padding: 0px;
 
         font-size: clamp(12px, 3.4vw, 1.2em);
@@ -73,8 +83,11 @@
 
     /* Header */
     #header {
-        bottom: 0px;
-        height: 80vh;
+        
+    }
+
+    #header-intro {
+        height: calc(75% - 10vh);
     }
 
 }
