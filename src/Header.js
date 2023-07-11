@@ -11,8 +11,8 @@ export default function Header() {
             <section id="header-intro">
                 <ResponsiveParticle />
                 <header id="header-title">
-                    <div id="name">Samuel Eun</div>
-                    <div id="desc">
+                    <div id="header-name">Samuel Eun</div>
+                    <div id="header-sub">
                         Aspiring Full Stack Software Engineer and Second Year at UC San Diego
                     </div>
                 </header>

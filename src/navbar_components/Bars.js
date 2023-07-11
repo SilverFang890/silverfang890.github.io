@@ -8,55 +8,27 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const ScrollLink = Scroll.Link;
 
-const itemVariants = {
-    open: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 300, damping: 24 }
-    },
-    closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
-};
-
-export function Leftbar({ elem }) {
-    return (
-        <div id="navbar-leftbar">
-            {elem }
-        </div>
-    )
-}
-
-export function Midbar({ elem,  }) {
-    return (
-        <div id="navbar-midbar">
-            {elem}
-        </div>
-    )
-}
-
-export function Rightbar({ elem }) {
-    return (
-        <div id="navbar-rightbar">
-            {elem}
-        </div>
-    )
-}
-
-export function Name({ pos, mobile }) {
+export function Title({ pos, mobile }) {
     if (mobile) {
         return (
-            <div id="navbar-name" className={pos}>
-                <div className="name">Samuel Eun</div>
-            </div>
+            <div id="navbar-title" className={pos}>
+            <div id="navbar-name">Samuel Eun</div>
+            <div id="navbar-sub">Data Science / Design and Interaction @ UCSD</div>
+            <div id="navbar-title-spacing">ThisIsALongInvisibleWord</div>
+        </div>
         )
     }
 
     return (
-        <div id="navbar-name" className={pos}>
-            <div className="name">Samuel Eun</div>
-            <div className="name-sub">Data Science / Design and Interaction @ UCSD</div>
+        <div id="navbar-title" className={pos}>
+            <div id="navbar-name">Samuel Eun</div>
+            <div id="navbar-sub">Data Science / Design and Interaction @ UCSD</div>
+            <div id="navbar-title-spacing">ThisIsALongInvisibleWord</div>
         </div>
     )
 }
+
+
 
 export function Contact({ pos }) {
     return (
@@ -83,6 +55,15 @@ export function Socials({ pos }) {
         </motion.div>
     )
 }
+
+const itemVariants = {
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 300, damping: 24 }
+    },
+    closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
+};
 
 export function Sections({ pos, mobile, isOpen }) {
     if (mobile) {

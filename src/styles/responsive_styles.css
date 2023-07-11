@@ -19,6 +19,10 @@
 
     /* Navbar */
     
+    .headroom {
+        height: 10vh;
+    }
+
     .navbar {
         display: flex;
 
@@ -34,7 +38,7 @@
 
         justify-content: flex-end;
 
-        color: #FFF;
+        color: #000;
         width: 30%;
     }
 
@@ -51,21 +55,28 @@
         padding-right: clamp(1.1vw, 7.5%, 1.5vw);
     }
 
+    #navbar-name {
+        font-size: clamp(1em, 5vw, 2em);
+    }
+
+    #navbar-sub {
+        margin-top: 0px;
+        font-size: clamp(11px, 3vw, 1em);
+    }
+
     .contact {
         font-size: clamp(11px, 3vw, 1em);
     }
 
     .icon-border {
-        padding: clamp(4px, 1.5vw, 7px);
-        border-style: solid;
-        border-radius: 50px;
-        border-width: clamp(1px, 0.2vw, 1.6px);
+        padding: clamp(4px, 1vw, 7px);
+        border-width: 1.8px;
     }
 
     .icons {
-        width: clamp(1em, 5vw, 1.5em);
-        height: clamp(1em, 5vw, 1.5em);
-        font-size: clamp(1em, 5vw, 2em);
+        width: clamp(1em, 4.5vw, 1.5em);
+        height: clamp(1em, 4.5vw, 1.5em);
+        font-size: clamp(1em, 4.5vw, 1.8em);
     }
 
     #navbar-sections {

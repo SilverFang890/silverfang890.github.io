@@ -1,3 +1,7 @@
+* {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 body {
     margin: 0px;
     background-color: #FFF;
@@ -15,12 +19,18 @@ section {
 
 /* Navbar */
 
+.headroom {
+    height: max(16vw, 10vh);
+}
+
 .navbar {
     position: sticky;
     top: 0;
 
-    background-color: #000;
-    color: #FFF;
+    box-shadow: 0px 2px 5px #CCC;
+    
+    background-color: #FFF;
+    color: #000;
 
     height: max(16vw, 10vh);
 }
@@ -82,12 +92,34 @@ section {
     display: flex;
 }
 
+#navbar-title {
+    flex-direction: column;
+}
+
+#navbar-name {
+    font-size: max(6.4vw, 4vh);
+    font-weight: 500;
+}
+
+#navbar-sub {
+    margin-top: min(-0.8vw, -0.5vh);
+    font-size: max(2.8vw, 1.75vh);
+    font-weight: 500;
+}
+
+#navbar-title-spacing {
+    height: 0px;
+    font-size: max(3.2vw, 2vh);
+    color: transparent;
+}
+
 #navbar-contact {
     flex-direction: column-reverse;
 }
 
 .contact {
     font-size: max(3.2vw, 2vh);
+    font-weight: 500;
 }
 
 #navbar-icons {
@@ -100,7 +132,7 @@ section {
     padding: 1.5vw;
     border-style: solid;
     border-radius: 50%;
-    border-width: 1.4px;
+    border-width: 1.8px;
 
     display: flex;
     justify-content: center;
@@ -172,11 +204,11 @@ section {
     text-align: center;
 }
 
-#name {
+#header-name {
     font-size: calc(10px + 8vmin);
 }
 
-#desc {
+#header-sub {
     font-size: calc(8px + 2.5vmin);
 }
 

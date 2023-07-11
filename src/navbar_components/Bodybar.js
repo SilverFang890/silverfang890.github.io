@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { Leftbar, Midbar, Rightbar, Name, Socials, Sections } from "./Bars";
+import { Leftbar, Midbar, Rightbar, Title, Socials, Sections } from "./Bars";
 import MenuToggle from "./MenuToggle";
 
 export default function Bodybar({ mobile, isOpen, setIsOpen }) {
@@ -10,7 +10,7 @@ export default function Bodybar({ mobile, isOpen, setIsOpen }) {
                 initial={false}
                 animate={isOpen ? "open" : "closed"}
             >
-                <Leftbar elem={<Name pos="left" mobile={mobile} /> } />
+                <Leftbar elem={<Title pos="left" mobile={mobile} /> } />
                 <Midbar elem={
                     <>
                     <Socials pos="left" />
@@ -26,7 +26,7 @@ export default function Bodybar({ mobile, isOpen, setIsOpen }) {
     
     return (
         <nav className="navbar">
-            <Leftbar elem={<Name pos="left"/> } />
+            <Leftbar elem={<Title pos="left"/> } />
             <Midbar elem={<Socials pos="mid" />} />
             <Rightbar elem={<Sections pos="right" />} />
         </nav>
