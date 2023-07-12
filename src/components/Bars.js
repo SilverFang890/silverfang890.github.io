@@ -8,17 +8,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const ScrollLink = Scroll.Link;
 
-export function Title({ pos, mobile }) {
-    if (mobile) {
-        return (
-            <div id="navbar-title" className={pos}>
-            <div id="navbar-name">Samuel Eun</div>
-            <div id="navbar-sub">Data Science / Design and Interaction @ UCSD</div>
-            <div id="navbar-title-spacing">ThisIsALongInvisibleWord</div>
-        </div>
-        )
-    }
-
+export function Title({ pos }) {
     return (
         <div id="navbar-title" className={pos}>
             <div id="navbar-name">Samuel Eun</div>
@@ -28,31 +18,13 @@ export function Title({ pos, mobile }) {
     )
 }
 
-
-
 export function Contact({ pos }) {
     return (
         <div id="navbar-contact" className={pos}>
-            <div className="contact">samuel9eun@gmail.com</div>
             <div className="contact">Los Angeles • CA</div>
             <div className="contact">San Diego • CA</div>
+            <div className="contact">@samm_silver</div>
         </div>
-    )
-}
-
-export function Socials({ pos }) {
-    return (
-        <motion.div id="navbar-icons" className={pos}>
-            <div className="icon-border">
-                <FontAwesomeIcon className="icons" icon={faGithub} />
-            </div>
-            <div className="icon-border">
-                <FontAwesomeIcon className="icons" icon={faLinkedin} />
-            </div>
-            <div className="icon-border">
-                <FontAwesomeIcon className="icons" icon={faEnvelope} />
-            </div>
-        </motion.div>
     )
 }
 
@@ -65,8 +37,8 @@ const itemVariants = {
     closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
 };
 
-export function Sections({ pos, mobile, isOpen }) {
-    if (mobile) {
+export function Sections({ pos, isMobile, isOpen }) {
+    if (isMobile) {
         return (
             <motion.div id="navbar-sections"
                 variants={{
@@ -110,9 +82,29 @@ export function Sections({ pos, mobile, isOpen }) {
 
     return (
         <div id="navbar-sections" className={pos}>
-            <div className="nav-section">Home</div>
-            <div className="nav-section">About Me</div>
+            <ScrollLink activeClass="active" smooth spy to="header">
+                <div className="nav-section">Home</div>
+            </ScrollLink>
+            <ScrollLink activeClass="active" smooth spy to="about-me">
+                <div className="nav-section">About Me</div>
+            </ScrollLink>
             <div className="nav-section">Projects</div>
         </div>
+    )
+}
+
+export function Socials() {
+    return (
+        <motion.div className="socials">
+            <a className="icon-border" href="https://github.com/SilverFang890" target="_blank">
+                <FontAwesomeIcon className="icons" icon={faGithub} />
+            </a>
+            <a className="icon-border" href="https://www.linkedin.com/in/samsilver890/" target="_blank">
+                <FontAwesomeIcon className="icons" icon={faLinkedin} />
+            </a>
+            <a className="icon-border">
+                <FontAwesomeIcon className="icons" icon={faEnvelope} />
+            </a>
+        </motion.div>
     )
 }

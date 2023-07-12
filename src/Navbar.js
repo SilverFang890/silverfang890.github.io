@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import Headroom from "react-headroom";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { Title, Contact, Socials, Sections } from "./navbar_components/Bars";
-import MenuToggle from "./navbar_components/MenuToggle";
+import { Title, Contact, Socials, Sections } from "./components/Bars";
+import MenuToggle from "./components/MenuToggle";
 
 
 export default function Navbar() {
@@ -31,7 +31,7 @@ export default function Navbar() {
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY || 0;
-            setIsHome(scrollY <= window.innerHeight/7.5);
+            setIsHome(scrollY <= window.innerHeight/5.5);
         }
         document.addEventListener("scroll", handleScroll);
 
@@ -40,9 +40,9 @@ export default function Navbar() {
         })
     }, [])
 
-    const mobile = screenSize.width <= 600;
+    const isMobile = screenSize.width <= 600;
 
-    if (mobile) {
+    if (isMobile) {
         return (
             <motion.nav className="navbar" 
                     initial={false}
@@ -52,15 +52,22 @@ export default function Navbar() {
                         {isHome &&
                             <motion.div id="navbar-leftbar"
                                 initial={{ 
-                                    opacity: 0 
+                                    opacity: 0,
+                                    y: -50
                                 }}
                                 animate={{ 
-                                    opacity: 1 
+                                    opacity: 1,
+                                    y: "-50%"
+                                }}
+                                transition={{
+                                    duration: 0.25
                                 }}
                                 exit={{ 
                                     transition: {
-                                        duration: 0
-                                    }
+                                        duration: 0.1
+                                    },
+                                    opacity: 0,
+                                    y: -50
                                 }}
                             >
                                 <Contact pos="left" />
@@ -71,15 +78,25 @@ export default function Navbar() {
                         {!isHome &&
                             <motion.div id="navbar-leftbar"
                                 initial={{ 
-                                    opacity: 0 
+                                    opacity: 0,
+                                    y: "-25%",
+                                    x: 10
                                 }}
                                 animate={{ 
-                                    opacity: 1 
+                                    opacity: 1,
+                                    y: "-50%",
+                                    x: 0
+                                }}
+                                transition={{
+                                    duration: 0.25
                                 }}
                                 exit={{ 
                                     transition: {
-                                        duration: 0
-                                    }
+                                        duration: 0.1
+                                    },
+                                    opacity: 0,
+                                    y: "-25%",
+                                    x: 10
                                 }}
                             >
                                 <Title pos="left" />
@@ -87,11 +104,10 @@ export default function Navbar() {
                         }
                     </AnimatePresence>
                     <div id="navbar-midbar">
-                        <Socials pos="left" />
                         <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
                     </div>
                     <div id="navbar-rightbar">
-                        <Sections pos="right" mobile={mobile} isOpen={isOpen} />
+                        <Sections pos="right" isMobile={isMobile} isOpen={isOpen} />
                     </div>
                 </motion.nav>
         )
@@ -99,12 +115,62 @@ export default function Navbar() {
 
     return (
         <nav className="navbar">
-            <div id="navbar-leftbar">
-                <Contact pos="left" />
-            </div>
-            <div id="navbar-midbar">
-                <Socials pos="mid" />
-            </div>
+            <AnimatePresence>
+                {isHome &&
+                    <motion.div id="navbar-leftbar"
+                        initial={{ 
+                            opacity: 0,
+                            y: -50
+                        }}
+                        animate={{ 
+                            opacity: 1,
+                            y: "-50%"
+                        }}
+                        transition={{
+                            duration: 0.25
+                        }}
+                        exit={{ 
+                            transition: {
+                                duration: 0.1
+                            },
+                            opacity: 0,
+                            y: -50
+                        }}
+                    >
+                        <Contact pos="left" />
+                    </motion.div>
+                }
+            </AnimatePresence>
+            <AnimatePresence>
+                {!isHome &&
+                    <motion.div id="navbar-leftbar"
+                        initial={{ 
+                            opacity: 0,
+                            y: "-25%",
+                            x: 10
+                        }}
+                        animate={{ 
+                            opacity: 1,
+                            y: "-50%",
+                            x: 0
+                        }}
+                        transition={{
+                            duration: 0.25
+                        }}
+                        exit={{ 
+                            transition: {
+                                duration: 0.1
+                            },
+                            opacity: 0,
+                            y: "-25%",
+                            x: 10
+                        }}
+                    >
+                        <Title pos="left" />
+                    </motion.div>
+                }
+            </AnimatePresence>
+            <div id="navbar-midbar" />
             <div id="navbar-rightbar">
                 <Sections pos="right" />
             </div>

@@ -24,21 +24,24 @@
     }
 
     .navbar {
-        display: flex;
-
         height: 10vh;
     }
+
 
     #navbar-midbar {
         width: 40%;
     }
 
     #navbar-rightbar {
-        height: inherit;
+        top: 50%;
+        left: 70%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
 
+        display: flex;
+        align-items: center;
         justify-content: flex-end;
 
-        color: #000;
         width: 30%;
     }
 
@@ -46,10 +49,10 @@
         padding-left: clamp(1.1vw, 7.5%, 1.5vw);
     }
     
-    .mid {
+    /* .mid {
         display: flex;
         width: 100%;
-    }
+    } */
 
     .right {
         padding-right: clamp(1.1vw, 7.5%, 1.5vw);
@@ -68,28 +71,23 @@
         font-size: clamp(11px, 3vw, 1em);
     }
 
-    .icon-border {
-        padding: clamp(4px, 1vw, 7px);
-        border-width: 1.8px;
-    }
-
-    .icons {
-        width: clamp(1em, 4.5vw, 1.5em);
-        height: clamp(1em, 4.5vw, 1.5em);
-        font-size: clamp(1em, 4.5vw, 1.8em);
-    }
-
     #navbar-sections {
         background-color: inherit;
 
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-end;
     }
 
     .nav-section {
-        padding: 0px;
+        margin: 4px;
+        padding: 1px;
 
         font-size: clamp(12px, 3.4vw, 1.2em);
+    }
+
+    .active {
+        border-bottom: solid #0066ff;
+        color: #000;
     }
 
     /* Header */
@@ -99,6 +97,17 @@
 
     #header-intro {
         height: calc(75% - 10vh);
+    }
+
+    .icon-border {
+        padding: clamp(4px, 1vw, 7px);
+        border-width: 2px;
+    }
+
+    .icons {
+        width: clamp(1em, 4.5vw, 1.5em);
+        height: clamp(1em, 4.5vw, 1.5em);
+        font-size: clamp(1em, 4.5vw, 1.8em);
     }
 
 }
