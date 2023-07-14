@@ -13,7 +13,6 @@ export function Title({ pos }) {
         <div id="navbar-title" className={pos}>
             <div id="navbar-name">Samuel Eun</div>
             <div id="navbar-sub">Data Science / Design and Interaction @ UCSD</div>
-            <div id="navbar-title-spacing">ThisIsALongInvisibleWord</div>
         </div>
     )
 }

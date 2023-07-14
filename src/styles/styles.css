@@ -48,13 +48,13 @@ section {
     align-items: center;
     justify-content: flex-start;
     
-    width: 30%;
+    width: 50%;
 }
 
 #navbar-midbar {
     position: absolute;
     top: 50%;
-    left: 30%;
+    left: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 
@@ -62,7 +62,7 @@ section {
     align-items: center;
     justify-content: flex-end;
 
-    width: 70%;
+    width: 50%;
 }
 
 #navbar-rightbar {
@@ -167,7 +167,7 @@ section {
 
 #header-title {
     position: absolute;
-    top: 50%;
+    top: 60%;
 
     width: 90%;
 
@@ -207,12 +207,6 @@ section {
     width: max(6.4vw, 4vh);
     height: max(6.4vw, 4vh);
     font-size: max(6.4vw, 4vh);
-}
-
-#icon-gradient {
-    background-color: black;
-    height: 100px;
-    width: 500px;
 }
 
 #header-article {

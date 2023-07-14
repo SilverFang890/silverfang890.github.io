@@ -15,7 +15,8 @@ export default function Header() {
             <section id="header-intro">
                 <ResponsiveParticle />
                     <header id="header-title">
-                    <Parallax speed={ 50 }>
+                    {/* <Parallax speed={ 50 }> */}
+                    <Parallax translateY={[200, -250]}>
                         <div id="header-name">Samuel Eun</div>
                         <div id="header-sub">
                             Aspiring Full Stack Software Engineer and Second Year at UC San Diego

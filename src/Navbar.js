@@ -31,7 +31,7 @@ export default function Navbar() {
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY || 0;
-            setIsHome(scrollY <= window.innerHeight/5.5);
+            setIsHome(scrollY <= window.innerHeight/4.5);
         }
         document.addEventListener("scroll", handleScroll);
 

@@ -27,14 +27,19 @@
         height: 10vh;
     }
 
+    #navbar-leftbar {
+        width: 40%;
+    }
 
     #navbar-midbar {
-        width: 40%;
+        left: 40%;
+
+        width: 20%;
     }
 
     #navbar-rightbar {
         top: 50%;
-        left: 70%;
+        left: 60%;
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
 
@@ -42,7 +47,7 @@
         align-items: center;
         justify-content: flex-end;
 
-        width: 30%;
+        width: 40%;
     }
 
     .left {
@@ -97,6 +102,10 @@
 
     #header-intro {
         height: calc(75% - 10vh);
+    }
+
+    #header-title {
+        top: 55%;
     }
 
     .icon-border {
