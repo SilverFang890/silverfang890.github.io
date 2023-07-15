@@ -1,5 +1,6 @@
-import React, { useCallback, useState, useEffect } from "react";
+import React, { useCallback, useState, useEffect, useRef } from "react";
 import Particles from "react-particles";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 import fullSizePart from "./particle_options/body_particles.json";
 import smallSizePart from "./particle_options/small_body_particles.json";
@@ -7,23 +8,31 @@ import smallSizePart from "./particle_options/small_body_particles.json";
 import { Socials } from "./components/Bars";
 import { loadFull } from "tsparticles";
 import { Element } from "react-scroll";
-import { Parallax } from "react-scroll-parallax";
 
 export default function Header() {
+    const ref = useRef(null)
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start 35%", "end start"]
+    });
+    const x = useTransform(scrollYProgress, [0, 1], [0, -400]);
+
     return (
         <Element id="header" className="section" name="header">
             <section id="header-intro">
                 <ResponsiveParticle />
-                    <header id="header-title">
-                    {/* <Parallax speed={ 50 }> */}
-                    <Parallax translateY={[200, -250]}>
-                        <div id="header-name">Samuel Eun</div>
-                        <div id="header-sub">
-                            Aspiring Full Stack Software Engineer and Second Year at UC San Diego
-                        </div>
-                        <Socials />
-                    </Parallax>
-                    </header>
+                    <motion.header id="header-title" ref={ref}
+                        style={{
+                            translateX: useSpring(x, {stiffness: 800, damping: 50})
+                        }}
+                    >
+                            <div id="header-name">Samuel Eun</div>
+                            <div id="header-sub">
+                                Aspiring Full Stack Software Engineer and
+                                Second Year at UC San Diego
+                            </div>
+                            <Socials />
+                    </motion.header>
             </section>
             <section id="header-article">
                 <div id="header-caption">

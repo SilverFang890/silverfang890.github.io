@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Headroom from "react-headroom";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { Title, Contact, Socials, Sections } from "./components/Bars";
+import { Title, Contact, Sections } from "./components/Bars";
 import MenuToggle from "./components/MenuToggle";
 
 
@@ -31,7 +31,7 @@ export default function Navbar() {
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY || 0;
-            setIsHome(scrollY <= window.innerHeight/4.5);
+            setIsHome(scrollY <= window.innerHeight/4);
         }
         document.addEventListener("scroll", handleScroll);
 
