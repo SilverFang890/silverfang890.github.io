@@ -78,6 +78,8 @@
 
     #navbar-sections {
         background-color: inherit;
+        height: auto;
+        width: auto;
 
         flex-direction: row;
         align-items: flex-end;
@@ -87,7 +89,7 @@
         margin: 4px;
         padding: 1px;
 
-        font-size: clamp(12px, 3.4vw, 1.2em);
+        font-size: clamp(12px, 3vw, 1.2em);
     }
 
     .active {

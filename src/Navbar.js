@@ -107,7 +107,7 @@ export default function Navbar() {
                         <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
                     </div>
                     <div id="navbar-rightbar">
-                        <Sections pos="right" isMobile={isMobile} isOpen={isOpen} />
+                        <Sections pos="right" isMobile={isMobile} isOpen={isOpen} setIsOpen={setIsOpen}/>
                     </div>
                 </motion.nav>
         )

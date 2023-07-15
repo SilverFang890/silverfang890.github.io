@@ -36,7 +36,7 @@ const itemVariants = {
     closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
 };
 
-export function Sections({ pos, isMobile, isOpen }) {
+export function Sections({ pos, isMobile, isOpen, setIsOpen }) {
     if (isMobile) {
         return (
             <motion.div id="navbar-sections"
@@ -62,17 +62,23 @@ export function Sections({ pos, isMobile, isOpen }) {
                 }}
                 style={{ pointerEvents: isOpen ? "auto" : "none" }}
             >
-                <motion.div className="nav-section" variants={itemVariants}>
+                <motion.div className="nav-section" 
+                    variants={itemVariants}
+                >
                     <ScrollLink activeClass="active" smooth spy to="header">
                         Home
                     </ScrollLink>
                 </motion.div>
-                <motion.div className="nav-section" variants={itemVariants}>
+                <motion.div className="nav-section" 
+                    variants={itemVariants}
+                >
                     <ScrollLink activeClass="active" smooth spy to="about-me">
                         About Me
                     </ScrollLink>
                 </motion.div>
-                <motion.div className="nav-section" variants={itemVariants}>
+                <motion.div className="nav-section" 
+                    variants={itemVariants}
+                >
                     Projects
                 </motion.div>
             </motion.div>
