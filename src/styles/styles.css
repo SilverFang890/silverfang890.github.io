@@ -118,17 +118,17 @@ section {
 
 #navbar-sections {
     display: flex;
-    height: 100vh;
+    height: calc(100vh - max(16vw, 10vh));
     width: 100vw;
     background-color: #FAFAFAEE;
 
-    flex-direction: column;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
 }
 
 .nav-section {
-    padding: 5px;
+    padding: 3vh;
 
     font-size: max(4.8vw, 3vh);
 }

@@ -11,6 +11,10 @@ export default function Navbar() {
     const [isHome, setIsHome] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
 
+    function toggleOpen() {
+        setIsOpen(!isOpen);
+    }
+
     function getCurrentDimension() {
         return {
             width: window.innerWidth
@@ -104,10 +108,10 @@ export default function Navbar() {
                         }
                     </AnimatePresence>
                     <div id="navbar-midbar">
-                        <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
+                        <MenuToggle toggleOpen={toggleOpen} />
                     </div>
                     <div id="navbar-rightbar">
-                        <Sections pos="right" isMobile={isMobile} isOpen={isOpen} setIsOpen={setIsOpen}/>
+                        <Sections pos="right" isMobile={isMobile} isOpen={isOpen} toggleOpen={toggleOpen}/>
                     </div>
                 </motion.nav>
         )

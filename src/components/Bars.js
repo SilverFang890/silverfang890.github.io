@@ -36,7 +36,7 @@ const itemVariants = {
     closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
 };
 
-export function Sections({ pos, isMobile, isOpen, setIsOpen }) {
+export function Sections({ pos, isMobile, isOpen, toggleOpen }) {
     if (isMobile) {
         return (
             <motion.div id="navbar-sections"
@@ -46,7 +46,7 @@ export function Sections({ pos, isMobile, isOpen, setIsOpen }) {
                         transition: {
                             type: "spring",
                             bounce: 0,
-                            duration: 0.6,
+                            duration: 1,
                             delayChildren: 0.2,
                             staggerChildren: 0.05
                         }
@@ -56,7 +56,7 @@ export function Sections({ pos, isMobile, isOpen, setIsOpen }) {
                         transition: {
                             type: "spring",
                             bounce: 0,
-                            duration: 0.3
+                            duration: 0.5
                         }
                     }
                 }}
@@ -64,20 +64,31 @@ export function Sections({ pos, isMobile, isOpen, setIsOpen }) {
             >
                 <motion.div className="nav-section" 
                     variants={itemVariants}
+
                 >
-                    <ScrollLink activeClass="active" smooth spy to="header">
+                    <ScrollLink 
+                        activeClass="active" 
+                        smooth spy to="header" 
+                        onClick={toggleOpen}
+                    >
                         Home
                     </ScrollLink>
                 </motion.div>
                 <motion.div className="nav-section" 
                     variants={itemVariants}
                 >
-                    <ScrollLink activeClass="active" smooth spy to="about-me">
+                    <ScrollLink 
+                        activeClass="active" 
+                        smooth spy to="about-me" 
+                        onClick={toggleOpen}
+                    >
                         About Me
                     </ScrollLink>
                 </motion.div>
-                <motion.div className="nav-section" 
+                <motion.div 
+                    className="nav-section" 
                     variants={itemVariants}
+                    onClick={toggleOpen}
                 >
                     Projects
                 </motion.div>
