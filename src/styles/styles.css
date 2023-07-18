@@ -120,7 +120,7 @@ section {
     display: flex;
     height: calc(100vh - max(16vw, 10vh));
     width: 100vw;
-    background-color: #FAFAFAEE;
+    background-color: #FDFDFDEE;
 
     flex-flow: column;
     justify-content: center;
@@ -135,7 +135,8 @@ section {
 
 .active {
     font-weight: bold;
-    color: #fb9850;
+    color: #3388ff;
+    /* color: #fb9850; */
 }
 
 /* Header */

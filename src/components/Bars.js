@@ -42,21 +42,23 @@ export function Sections({ pos, isMobile, isOpen, toggleOpen }) {
             <motion.div id="navbar-sections"
                 variants={{
                     open: {
-                        clipPath: "inset(0% 0% 0% 0% round 0px 0px 10px 10px)",
+                        // clipPath: "inset(0% 0% 0% 0% round 0px 0px 10px 10px)",
+                        clipPath: "circle(121% at calc(97vw - (max(6.4vw, 4vh))/2) -5vh)",
                         transition: {
                             type: "spring",
                             bounce: 0,
-                            duration: 1,
-                            delayChildren: 0.2,
+                            duration: 0.8,
+                            delayChildren: 0.3,
                             staggerChildren: 0.05
                         }
                     },
                     closed: {
-                        clipPath: "inset(0% 0% 100% 0% round 0px 0px 10px 10px)",
+                        // clipPath: "inset(0% 0% 100% 0% round 0px 0px 10px 10px)",
+                        clipPath: "circle(6% at calc(97vw - (max(6.4vw, 4vh))/2) -5vh)",
                         transition: {
                             type: "spring",
                             bounce: 0,
-                            duration: 0.5
+                            duration: 0.6
                         }
                     }
                 }}
