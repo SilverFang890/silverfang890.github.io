@@ -64,36 +64,38 @@ export function Sections({ pos, isMobile, isOpen, toggleOpen }) {
                 }}
                 style={{ pointerEvents: isOpen ? "auto" : "none" }}
             >
-                <motion.div className="nav-section" 
-                    variants={itemVariants}
+                <div id="nav-section-content">
+                    <motion.div className="nav-section" 
+                        variants={itemVariants}
 
-                >
-                    <ScrollLink 
-                        activeClass="active" 
-                        smooth spy to="header" 
+                    >
+                        <ScrollLink 
+                            activeClass="active" 
+                            smooth spy to="header" 
+                            onClick={toggleOpen}
+                        >
+                            Home
+                        </ScrollLink>
+                    </motion.div>
+                    <motion.div className="nav-section" 
+                        variants={itemVariants}
+                    >
+                        <ScrollLink 
+                            activeClass="active" 
+                            smooth spy to="about-me" 
+                            onClick={toggleOpen}
+                        >
+                            About Me
+                        </ScrollLink>
+                    </motion.div>
+                    <motion.div 
+                        className="nav-section" 
+                        variants={itemVariants}
                         onClick={toggleOpen}
                     >
-                        Home
-                    </ScrollLink>
-                </motion.div>
-                <motion.div className="nav-section" 
-                    variants={itemVariants}
-                >
-                    <ScrollLink 
-                        activeClass="active" 
-                        smooth spy to="about-me" 
-                        onClick={toggleOpen}
-                    >
-                        About Me
-                    </ScrollLink>
-                </motion.div>
-                <motion.div 
-                    className="nav-section" 
-                    variants={itemVariants}
-                    onClick={toggleOpen}
-                >
-                    Projects
-                </motion.div>
+                        Projects
+                    </motion.div>
+                </div>
             </motion.div>
         )
     }

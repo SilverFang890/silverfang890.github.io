@@ -117,19 +117,23 @@ section {
 }
 
 #navbar-sections {
-    display: flex;
     height: calc(100vh - max(16vw, 10vh));
     width: 100vw;
-    background-color: #FDFDFDEE;
 
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+    background-color: #FDFDFDEA;
+}
+
+#nav-section-content {
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-section {
     padding: 3vh;
 
+    text-align: center;
     font-size: max(4.8vw, 3vh);
 }
 
