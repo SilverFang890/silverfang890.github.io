@@ -113,6 +113,6 @@
     },
     "retina_detect": true,
     "background": {
-        "color": "#FFF"
+        "color": "var(--back)"
     }
 }

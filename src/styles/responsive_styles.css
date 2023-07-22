@@ -1,31 +1,17 @@
 /* Phone Landscape */
 @media only screen and (max-width: 600px) and (orientation: landscape) {
     * {
-        background-color: red;
+        
     }
 }
 
-/* Tablet */
+/* Tablet and Up*/
 @media only screen and (min-width: 600px) {
-    .section {
-        position: relative;
-        bottom: 10vh;
-    }
-    
-    section {
-        position: relative;
-        top: 10vh;
+    :root {
+        --nav-height: 10vh;
     }
 
     /* Navbar */
-    
-    .headroom {
-        height: 10vh;
-    }
-
-    .navbar {
-        height: 10vh;
-    }
 
     #navbar-leftbar {
         width: 40%;
@@ -50,19 +36,6 @@
         width: 40%;
     }
 
-    .left {
-        padding-left: clamp(1.1vw, 7.5%, 1.5vw);
-    }
-    
-    /* .mid {
-        display: flex;
-        width: 100%;
-    } */
-
-    .right {
-        padding-right: clamp(1.1vw, 7.5%, 1.5vw);
-    }
-
     #navbar-name {
         font-size: clamp(1em, 5vw, 2em);
     }
@@ -77,9 +50,9 @@
     }
 
     #navbar-sections {
-        background-color: inherit;
         height: auto;
         width: auto;
+        background-color: inherit;
 
         display: flex;
         flex-direction: row;
@@ -91,48 +64,67 @@
         margin: 4px;
         padding: 1px;
 
-        font-size: clamp(12px, 3vw, 1.2em);
+        font-size: clamp(12px, 2.8vw, 1.4em);
     }
 
     .active {
-        border-bottom: solid #0066ff;
-        color: #000;
+        border-bottom: solid #3388ff;
+        color: inherit;
     }
 
-    /* Header */
-    #header {
-        
-    }
-
-    #header-intro {
-        height: calc(75% - 10vh);
-    }
-
-    #header-title {
-        top: 55%;
-    }
+    /* Home */
 
     .icon-border {
-        padding: clamp(4px, 1vw, 7px);
-        border-width: 2px;
+        padding: min(1em, 1vw);
     }
 
     .icons {
-        width: clamp(1em, 4.5vw, 1.5em);
-        height: clamp(1em, 4.5vw, 1.5em);
-        font-size: clamp(1em, 4.5vw, 1.8em);
+        width: min(1.6em, 7vw);
+        height: min(1.6em, 7vw);
+        font-size: min(1.6em, 7vw);
     }
 
+    .story {
+        font-size: clamp(1.2em, 3vw, 1.35em);
+        padding: 5vh 10vw 0vh 10vw;
+    }
 }
 
 @media only screen and (min-width: 768px) {
+    /* Home */
 
+    #header-title {
+        top: 30%;
+    }
+
+    .story {
+        font-size: clamp(1.3em, 2.6vw, 1.35em);
+        padding: 5vh 15vw 0vh 15vw;
+    }
 }
 
 @media only screen and (min-width: 992px) {
+    /* Home */
 
+    .icon-border {
+        padding: min(0.8em, 0.8vw);
+    }
+
+    .story {
+        font-size: 1.4em;
+        padding: 5vh 20vw 0vh 15vw;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
+    /* Home */
+    
+    #header-title {
+        top: 35%;
+    }
 
+    .story {
+        font-size: 1.45em;
+        padding: 5vh 22.5vw 0vh 22.5vw;
+    }
 }

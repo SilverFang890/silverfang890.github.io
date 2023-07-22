@@ -5,12 +5,12 @@
     },
     "particles": {
         "number": {
-            "value": 9,
+            "value": 8,
             "density": {
                 "enable": true,
-                "area": 250
+                "area": 300
             },
-            "limit": 13
+            "limit": 14
         },
         "collisions": {
             "enable": true
@@ -118,6 +118,6 @@
     },
     "retina_detect": true,
     "background": {
-        "color": "#FFF"
+        "color": "var(--back)"
     }
 }

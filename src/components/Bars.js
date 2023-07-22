@@ -1,11 +1,6 @@
 import { motion } from "framer-motion";
 import Scroll from "react-scroll";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-
 const ScrollLink = Scroll.Link;
 
 export function Title({ pos }) {
@@ -71,7 +66,7 @@ export function Sections({ pos, isMobile, isOpen, toggleOpen }) {
                     >
                         <ScrollLink 
                             activeClass="active" 
-                            smooth spy to="header" 
+                            smooth spy to="home"
                             onClick={toggleOpen}
                         >
                             Home
@@ -102,7 +97,7 @@ export function Sections({ pos, isMobile, isOpen, toggleOpen }) {
 
     return (
         <div id="navbar-sections" className={pos}>
-            <ScrollLink activeClass="active" smooth spy to="header">
+            <ScrollLink activeClass="active" smooth spy to="home">
                 <div className="nav-section">Home</div>
             </ScrollLink>
             <ScrollLink activeClass="active" smooth spy to="about-me">
@@ -113,18 +108,46 @@ export function Sections({ pos, isMobile, isOpen, toggleOpen }) {
     )
 }
 
-export function Socials() {
+const Path = props => (
+    <motion.path
+      fill="transparent"
+      strokeWidth="2.8"
+      stroke="var(--color)"
+      strokeLinecap="round"
+      {...props}
+    />
+);
+
+export function MenuToggle({ toggleOpen }) {
     return (
-        <motion.div className="socials">
-            <a className="icon-border" href="https://github.com/SilverFang890" target="_blank">
-                <FontAwesomeIcon className="icons" icon={faGithub} />
-            </a>
-            <a className="icon-border" href="https://www.linkedin.com/in/samsilver890/" target="_blank">
-                <FontAwesomeIcon className="icons" icon={faLinkedin} />
-            </a>
-            <a className="icon-border">
-                <FontAwesomeIcon className="icons" icon={faEnvelope} />
-            </a>
+        <motion.div onClick={toggleOpen} id="dropdown">
+            <svg width="max(6.4vw, 4vh)" viewBox="0 0 21 18">
+                <Path
+                    variants={{
+                        closed: { d: "M 2 1.75 L 19 1.75" },
+                        open: { d: "M 3 16.25 L 18 1.75" }
+                    }}
+                />
+                <Path
+                    variants={{
+                        closed: {
+                            opacity: 1,
+                            d: "M 2 9 L 19 9"
+                        },
+                        open: { 
+                            opacity: 0,
+                            d: "M 4 9 L 19 9"
+                        }
+                    }}
+                    transition={{ duration: 0.11 }}
+                />
+                <Path
+                    variants={{
+                        closed: { d: "M 2 16.25 L 19 16.25" },
+                        open: { d: "M 3 1.75 L 18 16.25" }
+                    }}
+                />
+            </svg>
         </motion.div>
-    )
+    )    
 }

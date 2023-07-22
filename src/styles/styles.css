@@ -2,37 +2,46 @@
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+:root {
+    --nav-height: max(16vw, 10vh);
+    --back: #fbfbfb;
+    --color: #080c10;
+}
+
 body {
     margin: 0px;
-    background-color: #FFF;
+    background-color: var(--back);
 }
 
 .section {
     position: relative;
-    bottom: max(16vw, 10vh);
+    bottom: var(--nav-height);
 }
 
 section {
     position: relative;
-    top: max(16vw, 10vh);
+    top: var(--nav-height);
 }
 
 /* Navbar */
 
 .headroom {
-    height: max(16vw, 10vh);
+    height: var(--nav-height);
 }
 
 .navbar {
     position: sticky;
     top: 0;
 
-    box-shadow: 0px 2px 5px #CCC;
+    /* box-shadow: 0px 2px 5px #CCC;
     
     background-color: #FFF;
-    color: #000;
+    color: #1c1c1d; */
 
-    height: max(16vw, 10vh);
+    background-color: var(--back);
+    color: var(--color);
+
+    height: var(--nav-height);
 
     z-index: 1;
 }
@@ -76,11 +85,6 @@ section {
     padding-left: 3vw;
 }
 
-/* .mid {
-    display: flex;
-    width: 100%;
-} */
-
 .right {
     padding-right: 3vw;
 }
@@ -117,10 +121,10 @@ section {
 }
 
 #navbar-sections {
-    height: calc(100vh - max(16vw, 10vh));
+    height: calc(100vh - var(--nav-height));
     width: 100vw;
 
-    background-color: #FDFDFDEA;
+    background-color: #fbfbfbED;
 }
 
 #nav-section-content {
@@ -143,32 +147,30 @@ section {
     /* color: #fb9850; */
 }
 
-/* Header */
+/* Home */
 
-#header {
-    height: 100vh;
+#home {
+    height: 115vh;
 }
 
-#header-intro {
-    height: calc(75% - max(16vw, 10vh));
+#header {
+    height: calc(52.5vh - var(--nav-height));
 }
 
 #header-particles {
     position: absolute;
-    top: 50%;
-    left: 10%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    top: -50%;
+    left: 5%;
 
-    height: 70%;
-    width: 80%;
+    height: 150%;
+    width: 90%;
 
     z-index: -1;
 }
 
 #header-title {
     position: absolute;
-    top: 60%;
+    top: 35%;
     left: 16%;
 
     width: 80%;
@@ -211,11 +213,19 @@ section {
     font-size: max(6.4vw, 4vh);
 }
 
-#header-article {
-    height: 25%;
+.story {
+    height: 55vh;
+    padding: 7.5vh 5vw 0vh 5vw;
 
-    border-top: solid #CCC 1px;
-    background-color: #EDEDED;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: clamp(1em, 3.6vw, 1.25em);
+    font-weight: 400;
+    /* color: #FB8600; */
+    color: #f58300;
 }
 
 /* About Me */
@@ -223,5 +233,16 @@ section {
 #about-me {
     height: 100vh;
 
-    z-index: -1;
+    background-color: #DDD;
+}
+
+/* Footer */
+
+#footer {
+    height: 0;
+}
+
+#footer-content {
+    height: var(--nav-height);
+    background-color: #101015;
 }
