@@ -4,13 +4,14 @@
 
 :root {
     --nav-height: max(16vw, 10vh);
-    --back: #fbfbfb;
-    --color: #080c10;
+    --back: #080c10;
+    --color: #fbfbfb;
 }
 
 body {
     margin: 0px;
-    background-color: var(--back);
+    /* background-color: var(--back); */
+    background-color: #12181f;
 }
 
 .section {
@@ -150,11 +151,27 @@ section {
 /* Home */
 
 #home {
-    height: 115vh;
+    height: 120vh;
+    background-image: linear-gradient(var(--back) 15vh, #080c1060 60vh, #080c1000 85vh);
+}
+
+.story {
+    height: 55vh;
+    padding: 7.5vh 5vw 0vh 5vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: clamp(1em, 3.6vw, 1.25em);
+    font-weight: 400;
+    /* color: #FB8600; */
+    color: #f58300;
 }
 
 #header {
-    height: calc(52.5vh - var(--nav-height));
+    height: calc(57.5vh - var(--nav-height));
 }
 
 #header-particles {
@@ -172,10 +189,11 @@ section {
     position: absolute;
     top: 35%;
     left: 16%;
-
     width: 80%;
 
     padding: 0px 2%;
+
+    color: var(--color);
 }
 
 #header-name {
@@ -204,7 +222,7 @@ section {
     justify-content: center;
     align-items: center;
 
-    color: #000;
+    color: var(--color);
 }
 
 .icons {
@@ -213,27 +231,14 @@ section {
     font-size: max(6.4vw, 4vh);
 }
 
-.story {
-    height: 55vh;
-    padding: 7.5vh 5vw 0vh 5vw;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    font-size: clamp(1em, 3.6vw, 1.25em);
-    font-weight: 400;
-    /* color: #FB8600; */
-    color: #f58300;
-}
-
 /* About Me */
 
 #about-me {
     height: 100vh;
 
-    background-color: #DDD;
+    border-top: solid 1px #DDD;
+
+    background-color: var(--color);
 }
 
 /* Footer */

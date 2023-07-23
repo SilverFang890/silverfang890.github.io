@@ -62,8 +62,8 @@
             "color": "random",
             "blink": false,
             "consent": false,
-            "opacity": 1,
-            "width": 2.3
+            "opacity": 1.1,
+            "width": 2.8
         },
         "move": {
             "enable": true,
@@ -81,13 +81,19 @@
     },
     "interactivity": {
         "events": {
+            "onDiv": {
+                "ids": ["header-title"],
+                "enable": false,
+                "mode": ["repulse"],
+                "type": "circle"
+            },
             "onhover": {
                 "enable": false,
-                "mode": ["attract"]
+                "mode": ["repluse"]
             },
             "onclick": {
                 "enable": false,
-                "mode": "repulse"
+                "mode": ["repulse"]
             },
             "resize": true
         },
@@ -106,18 +112,18 @@
                 "speed": 3
             },
             "repulse": {
-                "distance": 50
+                "distance": 100
             },
             "push": {
                 "particles_nb": 4
             },
             "bounce": {
-                "distance": 50
+                "distance": 1
             }
         }
     },
     "retina_detect": true,
     "background": {
-        "color": "var(--back)"
+        "color": "transparent"
     }
 }

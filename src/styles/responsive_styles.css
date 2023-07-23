@@ -86,7 +86,7 @@
 
     .story {
         font-size: clamp(1.2em, 3vw, 1.35em);
-        padding: 5vh 10vw 0vh 10vw;
+        padding: 7.5vh 10vw 0vh 10vw;
     }
 }
 
@@ -99,7 +99,7 @@
 
     .story {
         font-size: clamp(1.3em, 2.6vw, 1.35em);
-        padding: 5vh 15vw 0vh 15vw;
+        padding: 7.5vh 15vw 0vh 15vw;
     }
 }
 
@@ -112,7 +112,7 @@
 
     .story {
         font-size: 1.4em;
-        padding: 5vh 20vw 0vh 15vw;
+        padding: 7.5vh 20vw 0vh 15vw;
     }
 }
 
@@ -125,6 +125,6 @@
 
     .story {
         font-size: 1.45em;
-        padding: 5vh 22.5vw 0vh 22.5vw;
+        padding: 7.5vh 22.5vw 0vh 22.5vw;
     }
 }

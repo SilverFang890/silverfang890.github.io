@@ -21,18 +21,18 @@ export default function Header() {
     return (
         <section id="header">
             <ResponsiveParticle />
-                <motion.header id="header-title" ref={ref}
-                    style={{
-                        translateX: useSpring(x, {stiffness: 800, damping: 50})
-                    }}
-                >
-                        <div id="header-name">Samuel Eun</div>
-                        <div id="header-sub">
-                            Aspiring Full Stack Software Engineer and
-                            Second Year at UC San Diego
-                        </div>
-                        <Socials />
-                </motion.header>
+            <motion.header id="header-title" ref={ref}
+                style={{
+                    translateX: useSpring(x, {stiffness: 800, damping: 50})
+                }}
+            >
+                    <div id="header-name">Samuel Eun</div>
+                    <div id="header-sub">
+                        Aspiring Full Stack Software Engineer and
+                        Second Year at UC San Diego
+                    </div>
+                    <Socials />
+            </motion.header>
         </section>
     )
 }

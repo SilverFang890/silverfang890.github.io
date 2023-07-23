@@ -11,7 +11,7 @@
             "enable": true
         },
         "color": {
-            "value": ["#cc33ff", "#0066ff"],
+            "value": ["#0066ff", "cc33ff"],
             "anim": {
                 "enable": false,
                 "speed": 400,
@@ -57,8 +57,8 @@
             "color": "random",
             "blink": false,
             "consent": false,
-            "opacity": 0.8,
-            "width": 2
+            "opacity": 1,
+            "width": 2.3
         },
         "move": {
             "enable": true,
@@ -113,6 +113,6 @@
     },
     "retina_detect": true,
     "background": {
-        "color": "var(--back)"
+        "color": "transparent"
     }
 }
