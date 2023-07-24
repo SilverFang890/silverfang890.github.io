@@ -1,19 +1,22 @@
 import { Element } from "react-scroll";
+import { easeInOut, motion } from "framer-motion";
 
 import Header from "./components/Header";
 
 export default function Home() {
     return (
         <Element id="home" className="section" name="home">
-            <Story />
-            <Header />
+            <div id="home-container">
+                <Story />
+                <Header />
+            </div>
         </Element>
     )
 }
 
 function Story() {
     return (
-        <section className="story">
+        <section id="story">
             <Story1 />
             <Story2 />
             <Story3 />
@@ -23,7 +26,7 @@ function Story() {
 
 function Story1() {
     return (
-        <div id="story-1">
+        <span id="story-1">
             It was a warm night in Los Angeles, where the air is marinated 
             with the smell of street food. The sidewalk – painted with dots 
             of crowds of hungry customers. Patreons – chatting about their 
@@ -31,27 +34,69 @@ function Story1() {
             you meet the tortilla pressor, who presses your shells and guides 
             you to the taco filler, who then loads your tacos and finally 
             passes you to the cashier. This streamlined design makes it easy 
-            to focus on enjoying the food itself. 
-        </div>
+            to focus on enjoying the food itself.
+        </span>
+    )
+}
+
+const words = {
+    anim: {
+        transition: {
+            delayChildren: 16,
+            staggerChildren: 0.42
+        }
+    }
+}
+
+const itemWords = {
+    anim: {
+        y: [0, 10, 0, 0],
+        scale: [1, 1.25, 1, 1],
+        rotate: [0, -13, 8, 0]
+    }
+}
+
+function Word({ word }) {
+    return(
+        <span> <motion.span
+                style={{
+                    display: "inline-block"
+                }}
+                transition={{
+                    duration: 0.8,
+                    repeat: Infinity,
+                    repeatDelay: 4
+                }}
+                variants={itemWords}
+            > {word} </motion.span> </span>
     )
 }
 
 function Story2() {
     return (
-        <div id="story-2">
+        <span id="story-2">
                 Making sense of the world is our very nature. People are most 
-                confident in what they understand. This is why I strive to use the data around us to 
-                make connections that just make sense.
-        </div>
+                confident in what they understand. This is why I strive to use
+                the data around us to 
+                make connections that 
+                <motion.span
+                    animate="anim"
+                    variants={words}
+                > 
+                    <Word word={" just "} />
+                    <Word word={" make "} />
+                    <Word word={" sense."} />
+                </motion.span>
+        </span>
     )
 }
 
 function Story3() {
     return (
-        <div id="story-3">
+        <span id="story-3">
             Using the intersection of data science and design, I aim to create 
             solutions that not only provide valuable insight but allow your 
             customers to enjoy the product itself.
-        </div>
+        </span>
     )
 }

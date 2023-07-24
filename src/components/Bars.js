@@ -17,7 +17,11 @@ export function Contact({ pos }) {
         <div id="navbar-contact" className={pos}>
             <div className="contact">Los Angeles • CA</div>
             <div className="contact">San Diego • CA</div>
-            <div className="contact">@samm_silver</div>
+            <div className="contact">
+                <a href="https://instagram.com/samm_silver" target="_blank">
+                    @samm_silver
+                </a>
+            </div>
         </div>
     )
 }

@@ -84,9 +84,9 @@
         font-size: min(1.6em, 7vw);
     }
 
-    .story {
+    #story {
         font-size: clamp(1.2em, 3vw, 1.35em);
-        padding: 7.5vh 10vw 0vh 10vw;
+        padding: 10vh 10vw 0vh 10vw;
     }
 }
 
@@ -97,9 +97,9 @@
         top: 30%;
     }
 
-    .story {
+    #story {
         font-size: clamp(1.3em, 2.6vw, 1.35em);
-        padding: 7.5vh 15vw 0vh 15vw;
+        padding: 10vh 15vw 0vh 15vw;
     }
 }
 
@@ -110,9 +110,9 @@
         padding: min(0.8em, 0.8vw);
     }
 
-    .story {
+    #story {
         font-size: 1.4em;
-        padding: 7.5vh 20vw 0vh 15vw;
+        padding: 10vh 20vw 0vh 15vw;
     }
 }
 
@@ -123,8 +123,8 @@
         top: 35%;
     }
 
-    .story {
+    #story {
         font-size: 1.45em;
-        padding: 7.5vh 22.5vw 0vh 22.5vw;
+        padding: 10vh 22.5vw 0vh 22.5vw;
     }
 }

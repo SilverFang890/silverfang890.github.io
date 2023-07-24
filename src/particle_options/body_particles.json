@@ -16,11 +16,11 @@
             "enable": true
         },
         "color": {
-            "value": ["#0066ff", "#cc33ff"],
+            "value": ["#0066ff", "#0066ff", "#00e6ff", "#00FF99"],
             "anim": {
                 "enable": false,
                 "speed": 400,
-                "sync": true
+                "sync": false
             }
         },
         "shape": {
@@ -37,7 +37,7 @@
             }
         },
         "size": {
-            "value": 4,
+            "value": 3.5,
             "random": false,
             "anim": {
                 "enable": false,
@@ -62,8 +62,8 @@
             "color": "random",
             "blink": false,
             "consent": false,
-            "opacity": 1.1,
-            "width": 2.8
+            "opacity": 1.25,
+            "width": 2.5
         },
         "move": {
             "enable": true,

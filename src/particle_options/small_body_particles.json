@@ -11,7 +11,7 @@
             "enable": true
         },
         "color": {
-            "value": ["#0066ff", "cc33ff"],
+            "value": ["#0066ff", "#0066ff", "#00e6ff", "#00FF99"],
             "anim": {
                 "enable": false,
                 "speed": 400,
@@ -53,11 +53,11 @@
         },
         "links": {
             "enable": true,
-            "distance": 600,
+            "distance": 400,
             "color": "random",
             "blink": false,
             "consent": false,
-            "opacity": 1,
+            "opacity": 1.5,
             "width": 2.3
         },
         "move": {
