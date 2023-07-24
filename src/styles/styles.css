@@ -145,10 +145,34 @@ section {
     font-size: max(4.8vw, 3vh);
 }
 
-.active {
+#navbar-progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #3388ff;
+    transform-origin: 50%;
+}
+
+.activeH {
     font-weight: bold;
     color: #3388ff;
-    /* color: #fb9850; */
+    /* color: #00e6ff; */
+    /* color: #00FF99; */
+}
+
+.activeA {
+    font-weight: bold;
+    /* color: #3388ff; */
+    color: #00e6ff;
+    /* color: #00FF99; */
+}
+
+.activeP {
+    font-weight: bold;
+    /* color: #3388ff; */
+    /* color: #00e6ff; */
+    color: #00FF99;
 }
 
 /* Home */
@@ -260,5 +284,5 @@ section {
 
 #footer-content {
     height: var(--nav-height);
-    background-color: #101015;
+    background-color: var(--back);
 }

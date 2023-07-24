@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Headroom from "react-headroom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring, useTransform } from "framer-motion";
 
 import { Title, Contact, Sections, MenuToggle } from "./components/Bars";
 
@@ -13,6 +13,28 @@ export default function Navbar() {
     function toggleOpen() {
         setIsOpen(!isOpen);
     }
+
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 200,
+        damping: 50
+    })
+    const hue = useTransform(scrollYProgress, [0, 1], [216, 156])
+    function progressBarColor({ hue }) {
+        return "hsl(" + hue + ", 100%, 50%)"
+    }
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY || 0;
+            setIsHome(scrollY <= window.innerHeight/1.5);
+        }
+        document.addEventListener("scroll", handleScroll);
+
+        return(() => {
+            document.removeEventListener("scroll", handleScroll);
+        })
+    }, [])
 
     function getCurrentDimension() {
         return {
@@ -30,18 +52,6 @@ export default function Navbar() {
             window.removeEventListener('resize', updateDimension);
         })
     }, [screenSize])
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY || 0;
-            setIsHome(scrollY <= window.innerHeight/1.5);
-        }
-        document.addEventListener("scroll", handleScroll);
-
-        return(() => {
-            document.removeEventListener("scroll", handleScroll);
-        })
-    }, [])
 
     const isMobile = screenSize.width <= 600;
 
@@ -109,9 +119,49 @@ export default function Navbar() {
                     <div id="navbar-midbar">
                         <MenuToggle toggleOpen={toggleOpen} />
                     </div>
-                    <div id="navbar-rightbar">
-                        <Sections pos="right" isMobile={isMobile} isOpen={isOpen} toggleOpen={toggleOpen}/>
-                    </div>
+                    <AnimatePresence>
+                        {isOpen &&
+                            <motion.div id="navbar-rightbar"
+                                initial="closed"
+                                animate="open"
+                                exit="closed"
+                                variants={{
+                                    open: {
+                                        clipPath: "circle(115% at calc(97vw - (max(6.4vw, 4vh))/2) -5vh)",
+                                        transition: {
+                                            type: "spring",
+                                            bounce: 0,
+                                            duration: 0.8,
+                                            delayChildren: 0.3,
+                                            staggerChildren: 0.05
+                                        }
+                                    },
+                                    closed: {
+                                        clipPath: "circle(6% at calc(97vw - (max(6.4vw, 4vh))/2) -5vh)",
+                                        transition: {
+                                            type: "spring",
+                                            bounce: 0,
+                                            duration: 0.6
+                                        }
+                                    }
+                                }}
+                            >
+                                <Sections 
+                                    pos="right" 
+                                    isMobile={isMobile}
+                                    toggleOpen={toggleOpen}
+                                />
+                            </motion.div>
+                        }
+                    </AnimatePresence>
+                    <motion.div id="navbar-progress" 
+                        // animate={{
+                        //     backgroundColor: progressBarColor(hue.get())
+                        // }}
+                        style={{
+                            scaleX: scaleX
+                        }}
+                    />
                 </motion.nav>
         )
     }
@@ -177,6 +227,11 @@ export default function Navbar() {
             <div id="navbar-rightbar">
                 <Sections pos="right" />
             </div>
+            <motion.div id="navbar-progress" 
+                style={{
+                    scaleX: scaleX
+                }}
+            />
         </nav>
     )
 }

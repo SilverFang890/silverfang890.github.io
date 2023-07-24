@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Scroll from "react-scroll";
 
 const ScrollLink = Scroll.Link;
@@ -32,44 +32,19 @@ const itemVariants = {
       y: 0,
       transition: { type: "spring", stiffness: 300, damping: 24 }
     },
-    closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
+    closed: { opacity: 0, y: 25, transition: { duration: 0.2 } }
 };
 
-export function Sections({ pos, isMobile, isOpen, toggleOpen }) {
+export function Sections({ pos, isMobile, toggleOpen }) {
     if (isMobile) {
         return (
-            <motion.div id="navbar-sections"
-                variants={{
-                    open: {
-                        // clipPath: "inset(0% 0% 0% 0% round 0px 0px 10px 10px)",
-                        clipPath: "circle(121% at calc(97vw - (max(6.4vw, 4vh))/2) -5vh)",
-                        transition: {
-                            type: "spring",
-                            bounce: 0,
-                            duration: 0.8,
-                            delayChildren: 0.3,
-                            staggerChildren: 0.05
-                        }
-                    },
-                    closed: {
-                        // clipPath: "inset(0% 0% 100% 0% round 0px 0px 10px 10px)",
-                        clipPath: "circle(6% at calc(97vw - (max(6.4vw, 4vh))/2) -5vh)",
-                        transition: {
-                            type: "spring",
-                            bounce: 0,
-                            duration: 0.6
-                        }
-                    }
-                }}
-                style={{ pointerEvents: isOpen ? "auto" : "none" }}
-            >
+            <motion.div id="navbar-sections">
                 <div id="nav-section-content">
                     <motion.div className="nav-section" 
                         variants={itemVariants}
-
                     >
                         <ScrollLink 
-                            activeClass="active" 
+                            activeClass="activeH" 
                             smooth spy to="home"
                             onClick={toggleOpen}
                         >
@@ -80,7 +55,7 @@ export function Sections({ pos, isMobile, isOpen, toggleOpen }) {
                         variants={itemVariants}
                     >
                         <ScrollLink 
-                            activeClass="active" 
+                            activeClass="activeA" 
                             smooth spy to="about-me" 
                             onClick={toggleOpen}
                         >
@@ -90,9 +65,14 @@ export function Sections({ pos, isMobile, isOpen, toggleOpen }) {
                     <motion.div 
                         className="nav-section" 
                         variants={itemVariants}
-                        onClick={toggleOpen}
                     >
-                        Projects
+                        <ScrollLink
+                            activeClass="activeP"
+                            smooth spy to="projects"
+                            onClick={toggleOpen}
+                        >
+                            Projects
+                        </ScrollLink>
                     </motion.div>
                 </div>
             </motion.div>
@@ -101,13 +81,23 @@ export function Sections({ pos, isMobile, isOpen, toggleOpen }) {
 
     return (
         <div id="navbar-sections" className={pos}>
-            <ScrollLink activeClass="active" smooth spy to="home">
-                <div className="nav-section">Home</div>
+            <ScrollLink className="nav-section"
+                activeClass="activeH" 
+                smooth spy to="home"
+            >
+                Home
             </ScrollLink>
-            <ScrollLink activeClass="active" smooth spy to="about-me">
-                <div className="nav-section">About Me</div>
+            <ScrollLink className="nav-section"
+                activeClass="activeA" 
+                smooth spy to="about-me"
+            >
+                About Me
+            </ScrollLink><ScrollLink className="nav-section"
+                activeClass="activeP" 
+                smooth spy to="projects"
+            >
+                Projects
             </ScrollLink>
-            <div className="nav-section">Projects</div>
         </div>
     )
 }

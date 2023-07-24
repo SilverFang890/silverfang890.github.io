@@ -1,5 +1,5 @@
 import { Element } from "react-scroll";
-import { easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import Header from "./components/Header";
 
@@ -42,7 +42,7 @@ function Story1() {
 const words = {
     anim: {
         transition: {
-            delayChildren: 16,
+            delayChildren: 1,
             staggerChildren: 0.42
         }
     }
@@ -50,9 +50,9 @@ const words = {
 
 const itemWords = {
     anim: {
-        y: [0, 10, 0, 0],
-        scale: [1, 1.25, 1, 1],
-        rotate: [0, -13, 8, 0]
+        y: ["0vh", "0.5vh", "0vh", "0vh"],
+        scale: [1, 1.1, 1, 1],
+        rotate: [0, -10, 5, 0]
     }
 }
 
