@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Headroom from "react-headroom";
-import { motion, AnimatePresence, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring, useTransform, color } from "framer-motion";
 
 import { Title, Contact, Sections, MenuToggle } from "./components/Bars";
 
@@ -19,10 +19,10 @@ export default function Navbar() {
         stiffness: 200,
         damping: 50
     })
-    const hue = useTransform(scrollYProgress, [0, 1], [216, 156])
-    function progressBarColor({ hue }) {
-        return "hsl(" + hue + ", 100%, 50%)"
-    }
+    const background = useTransform(scrollYProgress, [0, 1], ["#3388ff", "#00FF99"])
+    // function progressBarColor({ hueValue }) {
+    //     return "hsl(" + hueValue + ", 100%, 50%)"
+    // }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -154,14 +154,13 @@ export default function Navbar() {
                             </motion.div>
                         }
                     </AnimatePresence>
-                    <motion.div id="navbar-progress" 
-                        // animate={{
-                        //     backgroundColor: progressBarColor(hue.get())
-                        // }}
+                    <motion.div id="navbar-progress"
                         style={{
-                            scaleX: scaleX
+                            scaleX,
+                            background
                         }}
-                    />
+                    >
+                    </motion.div>
                 </motion.nav>
         )
     }
@@ -229,7 +228,8 @@ export default function Navbar() {
             </div>
             <motion.div id="navbar-progress" 
                 style={{
-                    scaleX: scaleX
+                    scaleX,
+                    background
                 }}
             />
         </nav>

@@ -42,7 +42,7 @@ function Story1() {
 const words = {
     anim: {
         transition: {
-            delayChildren: 1,
+            delayChildren: 16,
             staggerChildren: 0.42
         }
     }
