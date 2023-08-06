@@ -1,5 +1,6 @@
 import { Element } from "react-scroll";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import taco from "./ave_26_tacos.jpeg";
 
 import Header from "./components/Header";
 
@@ -15,8 +16,20 @@ export default function Home() {
 }
 
 function Story() {
+
+    const { scrollYProgress } = useScroll();
+    const pos = useTransform(scrollYProgress, [0, 1], ["16% 60%", "20% 60%"])
+
     return (
         <section id="story">
+            {/* <motion.img src={taco} alt="taco stand"
+                initial={{
+                    maskSize: "16% 60%"
+                }}
+                animate={{
+                    maskSize: pos 
+                }}
+            /> */}
             <Story1 />
             <Story2 />
             <Story3 />
@@ -26,15 +39,13 @@ function Story() {
 
 function Story1() {
     return (
-        <span id="story-1">
-            It was a warm night in Los Angeles, where the air is marinated 
-            with the smell of street food. The sidewalk – painted with dots 
-            of crowds of hungry customers. Patreons – chatting about their 
-            night or taking a break between clubs and bars. Behind the stand, 
-            you meet the tortilla pressor, who presses your shells and guides 
-            you to the taco filler, who then loads your tacos and finally 
-            passes you to the cashier. This streamlined design makes it easy 
-            to focus on enjoying the food itself.
+        <span id="story-1" className="story-paragraph">
+            It is a warm summer night in Los Angeles. On the sidewalk – a lone 
+            taco stand, lit gently by the streetlights. Hungry customers – 
+            coming from bars, clubs, and families out for dinner – gathering 
+            around. They watch as the homemade corn tortillas are hand-pressed 
+            and the pastor flies off the skewer grill. This streamlined design 
+            effortlessly delivers the tacos into their hands.
         </span>
     )
 }
@@ -74,7 +85,7 @@ function Word({ word }) {
 
 function Story2() {
     return (
-        <span id="story-2">
+        <span id="story-2" className="story-paragraph">
                 Making sense of the world is our very nature. People are most 
                 confident in what they understand. This is why I strive to use
                 the data around us to 
@@ -93,7 +104,7 @@ function Story2() {
 
 function Story3() {
     return (
-        <span id="story-3">
+        <span id="story-3" className="story-paragraph">
             Using the intersection of data science and design, I aim to create 
             solutions that not only provide valuable insight but allow your 
             customers to enjoy the product itself.

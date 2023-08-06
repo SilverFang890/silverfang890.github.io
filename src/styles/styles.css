@@ -187,13 +187,11 @@ section {
 #home-container {
     height: 125vh;
     background-image: linear-gradient(#080c10 15vh, #080c1090 60vh, #080c1000 85vh);
-
-    z-index: 1;
 }
 
 #story {
     height: 55vh;
-    padding: 10vh 5vw 0vh 5vw;
+    padding: 10vh 5vw 5vh 5vw;
 
     display: flex;
     flex-direction: column;
@@ -204,6 +202,36 @@ section {
     font-weight: 400;
     /* color: #FB8600; */
     color: #dd7600;
+}
+
+.story-paragraph {
+    z-index: 1;
+}
+
+#home img {
+    width: 96vw;
+    height: 70vh;
+
+    position: absolute;
+    top: -5vh;
+    left: 2vw;
+
+    object-fit: cover;
+    mask-image: 
+        linear-gradient(to bottom, transparent, #000, transparent),
+        linear-gradient(to bottom, transparent, #000, transparent),
+        linear-gradient(to bottom, transparent, #000, transparent),
+        linear-gradient(to bottom, transparent, #000, transparent),
+        linear-gradient(to bottom, transparent, #000, transparent);
+    mask-size: 
+        18% 60%;
+    mask-position: 
+        0% 30%, 
+        25% 40%, 
+        50% 30%, 
+        75% 60%, 
+        100% 70%;
+    mask-repeat: no-repeat;
 }
 
 #header {
@@ -223,7 +251,7 @@ section {
 
 #header-title {
     position: absolute;
-    top: 35%;
+    top: 25%;
     right: 0%;
 
     padding: 0% 5% 0% 20%;
