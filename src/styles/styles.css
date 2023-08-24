@@ -20,16 +20,16 @@ body {
     bottom: var(--nav-height);
 }
 
-section {
+.down {
     position: relative;
     top: var(--nav-height);
 }
 
 /* Navbar */
 
-.headroom {
+/* .headroom {
     height: var(--nav-height);
-}
+} */
 
 .navbar {
     position: sticky;
@@ -145,15 +145,6 @@ section {
     font-size: max(4.8vw, 3vh);
 }
 
-#navbar-progress {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background-color: #3388ff;
-    transform-origin: 50%;
-}
-
 .activeH {
     font-weight: bold;
     color: #3388ff;
@@ -175,21 +166,30 @@ section {
     color: #00FF99;
 }
 
+#navbar-progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #3388ff;
+    transform-origin: 50%;
+}
+
 /* Home */
 
 #home {
-    height: 125vh;
+    height: 130vh;
     background-color: #131920;
 
     z-index: 0;
 }
 
 #home-container {
-    height: 125vh;
-    background-image: linear-gradient(#080c10 15vh, #080c1090 60vh, #080c1000 85vh);
+    height: 130vh;
+    background-image: linear-gradient(#080c10 15vh, #080c1090 60vh, #080c1000 85vh, #080c1000 100vh, #080c10 115vh);
 }
 
-#story {
+#home-story {
     height: 55vh;
     padding: 10vh 5vw 5vh 5vw;
 
@@ -208,7 +208,7 @@ section {
     z-index: 1;
 }
 
-#home img {
+/* #home img {
     width: 96vw;
     height: 70vh;
 
@@ -232,10 +232,11 @@ section {
         75% 60%, 
         100% 70%;
     mask-repeat: no-repeat;
-}
+} */
 
-#header {
-    height: calc(55vh - var(--nav-height));
+#home-header {
+    --header-height: calc(45vh - var(--nav-height));
+    height: var(--header-height);
 }
 
 #header-particles {
@@ -243,15 +244,15 @@ section {
     top: -50%;
     left: 5%;
 
-    height: 150%;
+    height: calc(var(--header-height) + var(--header-height)/2);
     width: 90%;
 
     z-index: -1;
 }
 
-#header-title {
+.header-title {
     position: absolute;
-    top: 25%;
+    top: 0;
     right: 0%;
 
     padding: 0% 5% 0% 20%;
@@ -259,11 +260,11 @@ section {
     color: var(--color);
 }
 
-#header-name {
+.header-name {
     font-size: calc(10px + 8vmin);
 }
 
-#header-sub {
+.header-sub {
     font-size: calc(8px + 2.5vmin);
 }
 
@@ -294,12 +295,25 @@ section {
     font-size: max(6.4vw, 4vh);
 }
 
+#home-transition {
+    height: 15vh;
+}
+
+#transition-statement {
+    position: absolute;
+    top: 5vh;
+    left: 10vw;
+    width: 80vw;
+
+    text-align: center;
+    font-size: calc(8px + 2.5vmin);
+    color: var(--color);
+}
+
 /* About Me */
 
 #about-me {
     height: 100vh;
-
-    border-top: solid 1px #DDD;
 
     background-color: var(--color);
 }

@@ -1,6 +1,5 @@
 import { Element } from "react-scroll";
 import { motion, useScroll, useTransform } from "framer-motion";
-import taco from "./ave_26_tacos.jpeg";
 
 import Header from "./components/Header";
 
@@ -10,6 +9,9 @@ export default function Home() {
             <div id="home-container">
                 <Story />
                 <Header />
+                <section id="home-transition" className="down">
+                    <div id="transition-statement">Welcome to my Technical Analysis and Creative Overview portfolio</div>
+                </section>
             </div>
         </Element>
     )
@@ -21,15 +23,7 @@ function Story() {
     const pos = useTransform(scrollYProgress, [0, 1], ["16% 60%", "20% 60%"])
 
     return (
-        <section id="story">
-            {/* <motion.img src={taco} alt="taco stand"
-                initial={{
-                    maskSize: "16% 60%"
-                }}
-                animate={{
-                    maskSize: pos 
-                }}
-            /> */}
+        <section id="home-story" className="down">
             <Story1 />
             <Story2 />
             <Story3 />
@@ -107,7 +101,7 @@ function Story3() {
         <span id="story-3" className="story-paragraph">
             Using the intersection of data science and design, I aim to create 
             solutions that not only provide valuable insight but allow your 
-            customers to enjoy the product itself.
+            customers to appreciate the product itself.
         </span>
     )
 }

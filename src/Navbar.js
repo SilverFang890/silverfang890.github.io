@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import Headroom from "react-headroom";
-import { motion, AnimatePresence, useScroll, useSpring, useTransform, color } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring, useTransform } from "framer-motion";
 
 import { Title, Contact, Sections, MenuToggle } from "./components/Bars";
 
@@ -20,9 +19,6 @@ export default function Navbar() {
         damping: 50
     })
     const background = useTransform(scrollYProgress, [0, 1], ["#3388ff", "#00FF99"])
-    // function progressBarColor({ hueValue }) {
-    //     return "hsl(" + hueValue + ", 100%, 50%)"
-    // }
 
     useEffect(() => {
         const handleScroll = () => {

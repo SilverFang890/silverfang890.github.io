@@ -19,19 +19,14 @@ export default function Header() {
     const x = useTransform(scrollYProgress, [0, 1], [0, -400]);
 
     return (
-        <section id="header">
+        <section id="home-header" className="down">
             <ResponsiveParticle />
-            <motion.header id="header-title" ref={ref}
+            <motion.header className="header-title" ref={ref}
                 style={{
                     translateX: useSpring(x, {stiffness: 800, damping: 50})
                 }}
             >
-                    <div id="header-name">Samuel Eun</div>
-                    <div id="header-sub">
-                        Aspiring Full Stack Software Engineer and
-                        Second Year at UC San Diego
-                    </div>
-                    <Socials />
+                <HeaderTitleContent />
             </motion.header>
         </section>
     )
@@ -66,6 +61,19 @@ function ResponsiveParticle() {
     } else {
         return <Particles id="header-particles" init={particlesInit} options={fullSizePart}/>
     }
+}
+
+function HeaderTitleContent() {
+    return (
+        <>
+            <div className="header-name">Samuel Eun</div>
+            <div className="header-sub">
+                Aspiring Full Stack Software Engineer and
+                Second Year at UC San Diego
+            </div>
+            <Socials />
+        </>
+    )
 }
 
 function Socials() {
