@@ -1,14 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.49cc1607.css",
-    "main.js": "/static/js/main.0a649f81.js",
-    "static/media/ave_26_tacos.jpeg": "/static/media/ave_26_tacos.13df1b1ddfcf5b344d86.jpeg",
+    "main.css": "/static/css/main.630b31c2.css",
+    "main.js": "/static/js/main.096ba47b.js",
     "index.html": "/index.html",
-    "main.49cc1607.css.map": "/static/css/main.49cc1607.css.map",
-    "main.0a649f81.js.map": "/static/js/main.0a649f81.js.map"
+    "main.630b31c2.css.map": "/static/css/main.630b31c2.css.map",
+    "main.096ba47b.js.map": "/static/js/main.096ba47b.js.map"
   },
   "entrypoints": [
-    "static/css/main.49cc1607.css",
-    "static/js/main.0a649f81.js"
+    "static/css/main.630b31c2.css",
+    "static/js/main.096ba47b.js"
   ]
 }
