@@ -1,9 +1,54 @@
-/* Phone Landscape */
+/*
+    Repsonsive Layout Notes:
+
+    Under 600: 
+        
+        Total page height: 230vh + (--nav-height * 2)(>=~20vh) >= ~250vh
+
+        Navbar:
+            height: max(16vw, 10vh)
+
+            Has dropdown menu
+
+        Home:
+            height: 130vh
+                story: 70vh (55vh content, 15vh padding)
+                header: 45vh - var(--nav-height)(~10vh) = ~35vh !! DIFF
+                transition: 15vh
+
+        About Me:
+            height: 100vh
+
+        Footer:
+            height: whatever the --nav-height is
+    
+    Over 600: 
+        
+        Total page height: 255vh + (--nav-height * 2)(20vh) = 275vh
+
+        Navbar:
+            height: 10vh
+
+        Home:
+            height: 155vh
+                story: 70vh (55vh content, 15vh padding)
+                header: 60vh - var(--nav-height)(10vh) = 50vh !! DIFF
+                transition: 25vh
+
+        About Me:
+            height: 100vh
+
+        Footer:
+            height: whatever the --nav-height is
+*/
+
+
+/* Phone Landscape 
 @media only screen and (max-width: 600px) and (orientation: landscape) {
     * {
         
     }
-}
+} */
 
 /* Tablet and Up*/
 @media only screen and (min-width: 600px) {
@@ -84,11 +129,11 @@
     /* Home */
 
     #home {
-        height: 145vh;
+        height: 155vh;
     }
     
     #home-container {
-        height: 145vh;
+        height: 155vh;
         background-image: linear-gradient(#080c10 15vh, #080c1090 60vh, #080c1000 85vh, #080c1000 115vh, #080c10 130vh);
     }
 
@@ -142,6 +187,10 @@
             100% 100%;
         mask-repeat: no-repeat;
     } */
+
+    #home-transition {
+        height: 25vh;
+    }
 }
 
 @media only screen and (min-width: 768px) {

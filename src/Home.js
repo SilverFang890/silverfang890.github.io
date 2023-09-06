@@ -1,5 +1,6 @@
+import React, { useRef } from "react";
 import { Element } from "react-scroll";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 import Header from "./components/Header";
 
@@ -10,7 +11,9 @@ export default function Home() {
                 <Story />
                 <Header />
                 <section id="home-transition" className="down">
-                    <div id="transition-statement">Welcome to my Technical Analysis and Creative Overview portfolio</div>
+                    <div id="transition-statement">
+                        Welcome to my <br /> Technical Analysis and Creative Overview
+                    </div>
                 </section>
             </div>
         </Element>
@@ -18,17 +21,43 @@ export default function Home() {
 }
 
 function Story() {
-
-    const { scrollYProgress } = useScroll();
-    const pos = useTransform(scrollYProgress, [0, 1], ["16% 60%", "20% 60%"])
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["end 50vh", "end 42.5vh"]
+    });
+    const x1 = useTransform(scrollYProgress, [0, 1], [0, -40]);
+    const x2 = useTransform(scrollYProgress, [0, 1], [0, 40]);
 
     return (
-        <section id="home-story" className="down">
-            <Story1 />
-            <Story2 />
-            <Story3 />
+        <section id="home-story" className="down" ref={ref}>
+            <motion.div 
+                style={{
+                    translateX: useSpring(x1, {stiffness: 800, damping: 50})
+                }}
+            >
+                <Story1 />
+            </motion.div>
+            <motion.div
+                style={{
+                    translateX: useSpring(x2, {stiffness: 800, damping: 50})
+                }}
+            >
+                <Story2 />
+            </motion.div>
+            <motion.div
+                style={{
+                    translateX: useSpring(x1, {stiffness: 800, damping: 50})
+                }}
+            >
+                <Story3 />
+            </motion.div>
         </section>
     )
+}
+
+function Transition() {
+
 }
 
 function Story1() {

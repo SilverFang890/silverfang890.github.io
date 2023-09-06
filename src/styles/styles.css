@@ -201,7 +201,7 @@ body {
     font-size: clamp(1em, 3.6vw, 1.25em);
     font-weight: 400;
     /* color: #FB8600; */
-    color: #dd7600;
+    color: #F5A847;
 }
 
 .story-paragraph {
@@ -252,7 +252,7 @@ body {
 
 .header-title {
     position: absolute;
-    top: 0;
+    top: 10%;
     right: 0%;
 
     padding: 0% 5% 0% 20%;
@@ -301,12 +301,13 @@ body {
 
 #transition-statement {
     position: absolute;
-    top: 5vh;
+    top: 1vh;
     left: 10vw;
     width: 80vw;
 
     text-align: center;
-    font-size: calc(8px + 2.5vmin);
+    line-height: 4vh;
+    font-size: calc(10px + 2.5vmin);
     color: var(--color);
 }
 
